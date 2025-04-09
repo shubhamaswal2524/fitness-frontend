@@ -21,6 +21,26 @@ const Header = () => {
       document.body.style.overflow = "auto";
     }
   }, [show]);
+
+useEffect(() => {
+  const handleScroll = () => {
+    if (window.scrollY > 300) {
+      const header = document.querySelector('.header');
+      if (header) {
+        header.classList.add('active');
+      }
+    } else {
+      const header = document.querySelector('.header');
+      if (header) {
+        header.classList.remove('active');
+      }
+    }
+  };
+  window.addEventListener('scroll', handleScroll);
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
   return (
     <header className="header">
       <div className={`overlay ${show ? "active" : ""}`}></div>

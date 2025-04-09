@@ -15,7 +15,7 @@ body {
   background: $black;
   color: $white;
   font-family: "Rubik", sans-serif;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .container {
@@ -90,4 +90,10 @@ input[type="number"]::-webkit-inner-spin-button {
   span {
     color: $red;
   }
+}
+
+.error_message
+{
+  color: $red;
+  margin-top: 0.3rem;
 }

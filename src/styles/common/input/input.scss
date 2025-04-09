@@ -1,6 +1,10 @@
 @use "../../../../public/assets/_var.scss" as *;
 
 .common_input {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
   label {
     font-size: 1.4rem;
     font-weight: 500;
@@ -11,7 +15,7 @@
   input {
     min-height: 5rem;
     height: 100%;
-    border-radius: 1.8rem;
+    border-radius: 1.5rem;
     border: 0.1rem solid $red;
     max-width: 50rem;
     width: 100%;

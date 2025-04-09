@@ -1,0 +1,36 @@
+@use "../../../../public/assets/_var.scss" as *;
+
+.common_textarea {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  label {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  textarea{
+    min-height: 10rem;
+    height: 100%;
+    border-radius: 1.5rem;
+    border: 0.1rem solid $red;
+    width: 100%;
+    background: transparent;
+    color: $white;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding:  1.2rem;
+
+    &::placeholder {
+      color: rgba($white, 0.4);
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+    &:focus-visible{
+      outline: none;
+    }
+  }
+}

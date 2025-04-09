@@ -1,10 +1,11 @@
+import Userlayout from "@/components/layout/userlayout";
 import Link from "next/link";
 import { ReactNode } from "react";
 
 const layout = ({ children }: { children: ReactNode }) => {
   return (
     <>
-      {children}
+     <Userlayout> {children}</Userlayout>
     </>
   );
 };

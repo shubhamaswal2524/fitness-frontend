@@ -1,0 +1,45 @@
+@use "../../../../public/assets/_var.scss" as * ;
+
+.sidebar_header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 8rem;
+  background: $clr181717;
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  padding: 1rem 3rem 1rem 33rem;
+  z-index: 9;
+  .main_heading{
+    font-size: 2rem;
+  }
+.left_header{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  .user_img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+  }
+  .user_text{
+    margin-left: 1rem;
+    h2{
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+        font-weight: 600;
+        font-family: $secondaryfont;
+        svg{
+            width: 4rem;
+            height: 4rem;
+            margin-right: 1rem;
+        }
+        
+    }
+  }
+}
+  
+}
