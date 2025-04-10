@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import logo from "../../../../public/assets/mainlogo.png"
+import logo from "../../../../public/assets/mainlogo.png";
 import Button from "../button/button";
-import CommonArrowButton from "../commonArrowBtn/commonArrowBtn";
 
-const Sidebar = () => {
+const Sidebar = ({show }: any) => {
   return (
     <>
-      <div className="sidebar">
+      <div className={
+        `sidebar ${show ? "active" : ""}`
+      }>
         <div className="logo">
             <Image src={logo}  alt="logo"/>
         </div>

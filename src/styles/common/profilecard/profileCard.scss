@@ -4,6 +4,7 @@
     width: 100%;
     background: rgba($white, 0.1);
     border-radius: 1.8rem;
+    min-width: 26rem;
 
     .image_box {
         height: 17rem;
@@ -40,14 +41,21 @@
                 align-items: center;
 
                 &:not(:last-child) {
-                    margin-bottom: 1rem;
+                    margin-bottom: 0.5rem;
+                }
+                
+                h2 {
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    line-height: 2.6rem;
+                    margin-bottom: 0.8rem;
                 }
 
                 span {
                     font-size: 1.5rem;
                     font-weight: 500;
                     line-height: 2rem;
-                    text-transform: uppercase;
+                    text-transform: capitalize;
                     color: rgba($white,0.6);
 
                 }
@@ -59,12 +67,6 @@
                     line-height: 2rem;
                 }
 
-                h2 {
-                    font-size: 1.8rem;
-                    font-weight: 600;
-                    line-height: 2.6rem;
-                    margin-bottom: 0.8rem;
-                }
 
 
                 p {
