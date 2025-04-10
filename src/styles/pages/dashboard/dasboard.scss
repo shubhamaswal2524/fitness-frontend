@@ -1,0 +1,12 @@
+@use "../../../../public/assets/_var.scss" as *;
+
+.dashboard{
+ &_head{
+  .row{
+    margin: -1rem;
+    >div{
+      padding: 1rem;
+    }
+  }
+ }
+}

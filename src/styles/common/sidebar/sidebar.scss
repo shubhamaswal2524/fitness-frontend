@@ -7,6 +7,15 @@
   height: 100vh;
   background: $clr181717;
   z-index: 10;
+  transition: 200ms all ease-in-out;
+  @media (max-width:767px) {
+    transform: translateX(-100%);
+    &.active{
+      transform: translateX(0%);
+    }
+    
+  }
+
   .logo{
     max-width:20rem ;
     width: 100%;

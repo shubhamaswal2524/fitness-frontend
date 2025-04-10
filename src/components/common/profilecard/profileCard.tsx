@@ -48,7 +48,7 @@ const ProfileCard = ({
               <h5>{location}</h5>
             </li>
           </ul>
-          <Button className="w-100 mt-5">Edit Profile</Button>
+          <Button className="w-100 mt-4">Edit Profile</Button>
         </div>
       </div>
     </>
