@@ -10,6 +10,10 @@ width: 100%;
     z-index: 99;
     background: transparent;
     backdrop-filter: blur(1rem);
+    transition: 0.3s ease-in-out all;
+    // &.active{
+    //     position: fixed;
+    // }
 
     .logo {
         max-width: 21.8rem;

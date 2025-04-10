@@ -30,7 +30,10 @@ const Hero = () => {
               </Col>
               <Col lg={6}>
                 <div className="in_right">
+                  <div className="right_banner">
                   <Image src={heroimg} alt="" />
+
+                  </div>
                   <div className="arrow_box">
                     <Image src={arrowimg} alt="" />
                   </div>

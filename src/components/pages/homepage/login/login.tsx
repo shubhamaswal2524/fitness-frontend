@@ -62,7 +62,7 @@ const Login = () => {
       <section className="login">
         <Container>
           <div className="login_in">
-            <h1 className="big_heading ">Login</h1>
+            <h1 className="main_heading ">Log<span>in</span></h1>
             <form onSubmit={formik.handleSubmit}>
               <div className="field_in">
                 <Input

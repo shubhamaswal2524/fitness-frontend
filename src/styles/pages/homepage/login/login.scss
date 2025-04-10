@@ -2,6 +2,10 @@
 
 .login {
   width: 100%;
+  .main_heading
+  {
+    margin-bottom: 4rem;
+  }
 
   &_in {
     color: $white;

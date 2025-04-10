@@ -7,6 +7,8 @@ import Input from "@/components/common/input/input";
 import Button from "@/components/common/button/button";
 import { apiHelper } from "@/services/api.services";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import CommonCheckbox from "@/components/common/commonCheckbox/commonCheckbox";
 
 interface FormValues {
   first_name: string;
@@ -72,7 +74,7 @@ const Signup = () => {
       <section className="signup">
         <Container>
           <div className="login_in">
-            <h1 className="big_heading ">Signup</h1>
+            <h1 className="main_heading ">Sign<span>up</span></h1>
 
             <form onSubmit={formik.handleSubmit}>
               <div className="field_in">
@@ -131,7 +133,9 @@ const Signup = () => {
                   }
                 />
               </div>
+              <CommonCheckbox className="sign_in_check" id="terms" label="Terms and conditions"/>
               <Button type="submit">Submit</Button>
+              <p className="login_para">Already have an account? <Link href="/login">Back to Login</Link></p>
             </form>
           </div>
         </Container>

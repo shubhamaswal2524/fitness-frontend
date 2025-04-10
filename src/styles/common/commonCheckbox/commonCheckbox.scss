@@ -1,0 +1,25 @@
+@use "../../../../public/assets/_var.scss" as *;
+
+.common_checkbox {
+    font-size: 1.5rem;
+    margin-top: .4rem;
+    line-height: 2rem;
+    font-weight: 400;
+    text-transform: capitalize;
+
+    label {
+        margin-left: 0.1rem;
+    }
+
+    .form-check-input {
+        margin-top: 0.2rem;
+        // background: transparent;
+        border: 0.1rem solid $red;
+        box-shadow: none;
+    }
+
+    .form-check-input:checked {
+        background-color: $red;
+        border-color: $red;
+    }
+}
