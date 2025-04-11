@@ -7,7 +7,7 @@ yarn-debug.log*
 yarn-error.log*
 
 .next
-
+package-lock.json
 # Logs
 logs
 *.log

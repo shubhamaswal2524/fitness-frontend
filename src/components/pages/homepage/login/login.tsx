@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import { apiHelper } from "@/services/api.services";
 import { ArrowIcon } from "../../../../../public/assets/icons";
 import CommonArrowButton from "@/components/common/commonArrowBtn/commonArrowBtn";
+import { useLoginMutation } from "@/lib/slices/auth/authApiSlice";
 
 interface FormValues {
   email: string;
@@ -18,7 +19,7 @@ interface FormValues {
 
 const Login = () => {
   const router = useRouter();
-
+  const [login] = useLoginMutation();
   const formik = useFormik<FormValues>({
     initialValues: {
       email: "",
@@ -40,8 +41,10 @@ const Login = () => {
     }),
     onSubmit: async (values, { setSubmitting, resetForm }) => {
       try {
-        const response: any = await apiHelper.post("/create", values);
-
+        // const response: any = await apiHelper.post("/create", values);
+        const response = await login(values).unwrap();
+        console.log("response", response);
+        return;
         if (response?.status == 200 || response?.status == 201) {
           router.push("/dashboard");
           resetForm();
@@ -62,7 +65,9 @@ const Login = () => {
       <section className="login">
         <Container>
           <div className="login_in">
-            <h1 className="main_heading ">Log<span>in</span></h1>
+            <h1 className="main_heading ">
+              Log<span>in</span>
+            </h1>
             <form onSubmit={formik.handleSubmit}>
               <div className="field_in">
                 <Input

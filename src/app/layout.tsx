@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.scss";
 import Layout from "@/components/layout/mainlayout";
+import Wrapper from "./layout-wrapper/layout";
+import StoreProvider from "./StoreProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -62,10 +64,11 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <StoreProvider>
+          <Wrapper>{children}</Wrapper>
+        </StoreProvider>
       </body>
     </html>
   );
