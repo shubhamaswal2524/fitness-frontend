@@ -10,7 +10,8 @@ const MainLayout = ({
   return (
     <>
       <Header />
-      <div className="main_layout">{children}</div> <Footer />
+      <div className="main_layout">{children}</div> 
+      <Footer />
     </>
   );
 };
