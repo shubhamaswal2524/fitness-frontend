@@ -1,4 +1,5 @@
 "use client";
+import Footer from "@/components/common/footer/footer";
 import MainLayout from "@/components/layout/mainlayout";
 import { useAppSelector } from "@/lib/store";
 import { useRouter } from "next/navigation";
