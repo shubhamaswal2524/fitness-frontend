@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { DumbleIcon } from "../../../../public/assets/icons";
+import { DumbleIcon, MiniCelenderIcon, MiniDollerIcon, TimeIcon } from "../../../../public/assets/icons";
 import PriceCard from "@/components/common/priceCard/priceCard";
 
 const Price = () => {
@@ -19,9 +19,14 @@ const Price = () => {
             </h1>
           </div>
           <div className="card_box">
-              <PriceCard className="active" />
-              <PriceCard />
+            <PriceCard className="active" />
+            <PriceCard />
           </div>
+          <ul className="options">
+            <li><MiniCelenderIcon/>Get 30 day free trial</li>
+            <li><MiniDollerIcon/>No any hidden fees pay</li>
+            <li><TimeIcon/>You can cancel anytime</li>
+          </ul>
         </div>
       </Container>
     </div>

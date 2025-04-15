@@ -62,7 +62,6 @@ const BmiPage = () => {
                           checked={unit === "metric"}
                           onChange={() => setUnit("metric")}
                         />{" "}
-                        <label htmlFor="metric">Metric Units</label>
                       </div>
                       <div className="field">
                         <CommonRadioBtn
@@ -74,7 +73,6 @@ const BmiPage = () => {
                           name="Metric Units"
                           id="Metric Units1"
                         />
-                        <label htmlFor="imperial">Imperial Units</label>{" "}
                       </div>
                     </div>
                     <div className="hero_input_box">

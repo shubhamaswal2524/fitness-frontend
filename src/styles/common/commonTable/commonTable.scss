@@ -1,0 +1,45 @@
+
+@use "../../../../public/assets/_var.scss" as *;
+.common_table {
+  width: 100%;
+  overflow-x: auto;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+
+  table {
+    width: 100%;
+    font-size: 0.875rem;
+
+    thead {
+      background-color: #7f1d1d;
+      color: white;
+
+      th {
+        padding: 1rem 1.5rem;
+        text-align: left;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+      }
+    }
+
+    tbody {
+      background-color: rgba(0, 0, 0, 0.05);
+
+      tr {
+        border-bottom: 1px solid #fecaca;
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:hover {
+          background-color: #fef2f2;
+        }
+
+        td {
+          padding: 1rem 1.5rem;
+          white-space: nowrap;
+          color: #1f2937;
+        }
+      }
+    }
+  }
+}
