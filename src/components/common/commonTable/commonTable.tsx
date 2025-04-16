@@ -1,45 +1,105 @@
-import { Table } from "react-bootstrap"
+import React, { ReactNode, useMemo, useState } from 'react';
+import './CommonTable.scss';
+import { Table } from 'react-bootstrap';
+import {
+  NoRecord,
+  SortDownIcon,
+  SortIcon,
+} from '../../../Assets/svgImgs/SvgIcons';
+import { useSelector } from 'react-redux';
+import Checkbox from '../FormInputs/Checkbox';
 
-const CommonTable = () => {
-    return (
-      <section className='Common_table'>
-           <div className="w-full overflow-x-auto shadow-md rounded-lg">
-      <table className="w-full text-sm">
-        <thead className="bg-red-900 text-white">
+const CommonTable = ({
+  className = '', // Default parameter
+  fields = [], // Default parameter
+  sortbuttons = true, // Default parameter
+  children,
+  noRecordFound,
+  editPermission,
+  moduleId,
+  selectAll,
+  selectAllFunction,
+}: {
+  className?: string;
+  fields?: string[];
+  sortbuttons?: boolean;
+  children?: ReactNode | any;
+  noRecordFound?: ReactNode;
+  editPermission?: boolean;
+  moduleId?: number;
+  selectAll?: boolean;
+  selectAllFunction?: any;
+}) => {
+  const [checked, setchecked] = useState(false);
+  const [active, setActive] = useState(false);
+  const { userColumns } = useSelector((state: any) => state.user);
+
+  const filteredColumns = useMemo(() => {
+    const particularPageColumns = userColumns?.find(
+      (column: any) => column?.moduleId == moduleId,
+    );
+    return particularPageColumns?.columnNames || fields;
+  }, [userColumns, moduleId, fields]);
+
+  return (
+    <Table responsive className={`commonTable ${className}`}>
+      {filteredColumns && (
+        <thead>
           <tr>
-            {headers.map((header) => (
-              <th
-                key={header}
-                className="px-6 py-4 text-left font-semibold tracking-wider"
-              >
-                {header}
+            {selectAll ? (
+              <Checkbox
+                label
+                onChange={() => {
+                  setchecked(!checked);
+                  selectAllFunction(!checked);
+                }}
+              />
+            ) : null}
+            {(editPermission
+              ? filteredColumns
+              : filteredColumns?.filter(
+                  (heading: string) => heading != 'Actions',
+                )
+            )?.map((item: any) => (
+              <th key={item}>
+                <div className="d-flex align-items-center">
+                  {item}
+                  {/* {sortbuttons && (
+                    <span
+                      onClick={() => setActive(!active)}
+                      className={`sort_icon ${
+                        active ? 'up_active' : 'down_active'
+                      }`}
+                      role="button"
+                    >
+                      <SortDownIcon />
+                    </span>
+                  )} */}
+                </div>
               </th>
             ))}
           </tr>
         </thead>
-        <tbody className="bg-black bg-opacity-5 divide-y divide-red-200">
-          {data.map((row, index) => (
-            <tr
-              key={index}
-              onClick={() => onRowClick?.(row)}
-              className="hover:bg-red-50 transition-colors duration-200 cursor-pointer"
-            >
-              {headers.map((header) => (
-                <td
-                  key={`${index}-${header}`}
-                  className="px-6 py-4 whitespace-nowrap text-gray-800"
-                >
-                  {row[header.toLowerCase()]}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-      </section>
-    )
-  }
-  
-  export default CommonTable
-  
+      )}
+      <tbody>
+        {(typeof children == 'object' && children?.length) ||
+        (typeof children != 'object' && children != undefined) ? (
+          children
+        ) : (
+          <tr className="no_record text-center">
+            <td colSpan={fields?.length}>
+              {noRecordFound || (
+                <div className="no_record_box">
+                  <NoRecord />
+                  <h4>No Record Found</h4>
+                </div>
+              )}
+            </td>
+          </tr>
+        )}
+      </tbody>
+    </Table>
+  );
+};
+
+export default CommonTable;
