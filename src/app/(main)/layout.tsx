@@ -1,6 +1,5 @@
 "use client";
-import Footer from "@/components/common/footer/footer";
-import MainLayout from "@/components/layout/mainlayout";
+
 import { useAppSelector } from "@/lib/store";
 import { useRouter } from "next/navigation";
 import { ReactNode, useEffect, useState } from "react";
@@ -21,9 +20,7 @@ const AppLayout = ({ children }: { children: ReactNode }) => {
   if (checkingAuth) return null; // Don't flash layout during redirect
   return (
     <>
-      <div className="main_layout_main">
-        <MainLayout>{children}</MainLayout>
-      </div>
+      <div className="main_layout_main">{children}</div>
     </>
   );
 };

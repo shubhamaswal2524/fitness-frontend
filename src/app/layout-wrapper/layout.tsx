@@ -2,6 +2,7 @@
 import { usePathname } from "next/navigation";
 import AuthLayout from "../(auth)/Authlayout";
 import AppLayout from "../(main)/layout";
+import MainLayout from "@/components/layout/mainlayout";
 
 export default function Wrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -12,7 +13,9 @@ export default function Wrapper({ children }: { children: React.ReactNode }) {
       pathname.startsWith("/personal-information") ? (
         <AuthLayout>{children}</AuthLayout>
       ) : (
-        <AppLayout>{children}</AppLayout>
+        <MainLayout>
+          <AppLayout>{children}</AppLayout>
+        </MainLayout>
       )}
     </>
   );
