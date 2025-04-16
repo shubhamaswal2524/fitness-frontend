@@ -20,10 +20,12 @@
     "react-fast-marquee": "^1.6.5",
     "react-otp-input": "^3.1.1",
     "react-redux": "^9.2.0",
+    "react-slick": "^0.30.3",
     "recharts": "^2.15.2",
     "redux-persist": "^6.0.0",
     "router": "^2.2.0",
     "sass": "^1.85.1",
+    "slick-carousel": "^1.8.1",
     "yup": "^1.6.1"
   },
   "devDependencies": {

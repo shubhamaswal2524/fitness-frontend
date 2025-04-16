@@ -448,10 +448,68 @@ export const SleepIcon = () => {
 </svg>
 )
 };
-// export const CloseIcon = () => { return(
-
-// )
-// };
+export const TimeIcon = () => { return(
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+<g clip-path="url(#clip0_35_1603)">
+<g clip-path="url(#clip1_35_1603)">
+<path d="M9.99935 19.0077C14.6017 19.0077 18.3327 15.2768 18.3327 10.6744C18.3327 6.07202 14.6017 2.34106 9.99935 2.34106C5.39697 2.34106 1.66602 6.07202 1.66602 10.6744C1.66602 15.2768 5.39697 19.0077 9.99935 19.0077Z" stroke="#DB1B1B"/>
+<path d="M10 4.84119V10.6745H15.8333" stroke="#DB1B1B" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_35_1603">
+<rect width="20" height="20" fill="white" transform="translate(0 0.674561)"/>
+</clipPath>
+<clipPath id="clip1_35_1603">
+<rect width="20" height="20" fill="white" transform="translate(0 0.674561)"/>
+</clipPath>
+</defs>
+</svg>
+)
+};
+export const MiniDollerIcon = () => { return(
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+<g clip-path="url(#clip0_35_1593)">
+<g clip-path="url(#clip1_35_1593)">
+<path d="M9.99935 19.0077C14.6017 19.0077 18.3327 15.2768 18.3327 10.6744C18.3327 6.07202 14.6017 2.34106 9.99935 2.34106C5.39697 2.34106 1.66602 6.07202 1.66602 10.6744C1.66602 15.2768 5.39697 19.0077 9.99935 19.0077Z" stroke="#DB1B1B" stroke-linejoin="round"/>
+<path d="M11.8522 8.82231C11.8522 7.79956 11.0231 6.97046 10.0003 6.97046H9.8652C8.91706 6.97046 8.14844 7.73908 8.14844 8.68722C8.14844 9.33748 8.51583 9.93193 9.09744 10.2227L10.9032 11.1256C11.4848 11.4164 11.8522 12.0109 11.8522 12.6611C11.8522 13.6093 11.0835 14.3779 10.1354 14.3779H10.0003C8.97754 14.3779 8.14844 13.5488 8.14844 12.5261" stroke="#DB1B1B" stroke-linejoin="round"/>
+<path d="M10 6.97075V5.1189" stroke="#DB1B1B" stroke-linejoin="round"/>
+<path d="M10 16.2301V14.3782" stroke="#DB1B1B" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_35_1593">
+<rect width="20" height="20" fill="white" transform="translate(0 0.674561)"/>
+</clipPath>
+<clipPath id="clip1_35_1593">
+<rect width="20" height="20" fill="white" transform="translate(0 0.674561)"/>
+</clipPath>
+</defs>
+</svg>
+)
+};
+export const MiniCelenderIcon = () => { return(
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+<g clip-path="url(#clip0_35_1582)">
+<g clip-path="url(#clip1_35_1582)">
+<path d="M18.3327 4.00757H1.66602V19.0076H18.3327V4.00757Z" stroke="#DB1B1B" stroke-linejoin="round"/>
+<path d="M5 5.25773V2.34106" stroke="#DB1B1B"/>
+<path d="M15 5.25773V2.34106" stroke="#DB1B1B"/>
+<path d="M18.3327 7.34106H1.66602" stroke="#DB1B1B"/>
+<path d="M5.41602 13.1746L8.33269 16.0913L14.9993 9.42456" stroke="#DB1B1B" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_35_1582">
+<rect width="20" height="20" fill="white" transform="translate(0 0.674561)"/>
+</clipPath>
+<clipPath id="clip1_35_1582">
+<rect width="20" height="20" fill="white" transform="translate(0 0.674561)"/>
+</clipPath>
+</defs>
+</svg>
+)
+};
 // export const CloseIcon = () => { return(
 
 // )

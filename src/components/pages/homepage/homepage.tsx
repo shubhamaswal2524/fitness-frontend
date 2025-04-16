@@ -4,8 +4,9 @@ import Login from "./login/login";
 import Signup from "./signup/signup";
 import MarqueeBar from "@/components/common/marqueeBar/marqueeBar";
 import BmiPage from "../bmi-page/bmiPage";
-import Videopage from "../videopgae/videopage";
+import Videopage from "../videopage/videopage";
 import Price from "../price/price";
+import AboutPage from "../aboutUs/aboutUs";
 const Homepage = () => {
   return (
     <div className="homepage_design">
@@ -13,6 +14,7 @@ const Homepage = () => {
       <MarqueeBar />
       <BmiPage />
       <Price/>
+      <AboutPage/>
       <Videopage/>
     </div>
   );

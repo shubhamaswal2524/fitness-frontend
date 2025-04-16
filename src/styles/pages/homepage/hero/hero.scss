@@ -5,10 +5,10 @@
     background: url("../../../../../public/assets/mainBg.png") no-repeat center center;
     background-size: cover;
     padding-top: 12.4rem;
-    height: 100vh;
+    height: 86rem;
 
     &_in {
-        height: calc(100vh - 12.4rem);
+        height: calc(86rem - 12.4rem);
         color: $white;
         display: flex;
         align-items: flex-end;

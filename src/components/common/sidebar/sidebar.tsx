@@ -5,6 +5,7 @@ import logo from "../../../../public/assets/mainlogo.png";
 import Button from "../button/button";
 import { logout } from "@/lib/slices/auth/authSlice";
 import { useDispatch } from "react-redux";
+import { NavLink } from "react-bootstrap";
 
 const Sidebar = ({ show }: any) => {
   const dispatch = useDispatch();
@@ -29,24 +30,24 @@ const Sidebar = ({ show }: any) => {
         <div className="sidebar_in">
           <ul>
             <li>
-              <Link href="/dashboard" className="main_heading active ">
+              <NavLink href="/dashboard" className="main_heading active ">
                 Dasboard
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link href="/personal-information" className="main_heading">
+              <NavLink href="/personal-information" className="main_heading">
                 Presonal informaton
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link href="/" className="main_heading">
+              <NavLink href="/" className="main_heading">
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link href="/" className="main_heading">
+              <NavLink href="/" className="main_heading">
                 Home
-              </Link>
+              </NavLink>
             </li>
           </ul>
           <Button

@@ -1,23 +1,25 @@
 import React from "react";
+import { ArrowIcon } from "../../../../public/assets/icons";
 
 const PriceCard = (
-  className: any
+  className: string | any
   // price: number,
   // title: string,
   // description: string
 ) => {
   return (
-    <div className={`price_card ${className}`}>
+    <div className={`price_card ${className || ""}`}>
       <p>12 WEEK PASS</p>
       <h2>
-        12 WEEK PASS <span>12</span>
+        <span className="doller_sign">$</span>
+      15,000<span>/12 week</span>
       </h2>
       <ul>
-        <li>Update workout (Calories In/Out)</li>
-        <li>Best Diet Plan & Info</li>
-        <li>Zoom meeting per week</li>
-        <li>Best User Satisfaction</li>
-        <li>Free Video Program</li>
+        <li><ArrowIcon/>Update workout (Calories In/Out)</li>
+        <li><ArrowIcon/>Best Diet Plan & Info</li>
+        <li><ArrowIcon/>Zoom meeting per week</li>
+        <li><ArrowIcon/>Best User Satisfaction</li>
+        <li><ArrowIcon/>Free Video Program</li>
       </ul>
     </div>
   );

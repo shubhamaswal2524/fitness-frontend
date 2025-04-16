@@ -1,8 +1,9 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 import "./globals.scss";
-import Layout from "@/components/layout/mainlayout";
 import Wrapper from "./layout-wrapper/layout";
 import StoreProvider from "./StoreProvider";
 
