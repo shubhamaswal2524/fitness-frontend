@@ -6,6 +6,10 @@
     background-size: cover;
     padding-top: 12.4rem;
     height: 86rem;
+    @media (max-width:991px) {
+        height: auto;
+        
+    }
 
     &_in {
         height: calc(86rem - 12.4rem);
@@ -13,6 +17,10 @@
         display: flex;
         align-items: flex-end;
         justify-content: center;
+        @media (max-width:991px) {
+            height: auto;
+            
+        }
         .row{
            align-items: center;
         }
@@ -25,6 +33,14 @@
                 line-height: 8.1rem;
                 text-transform: uppercase;
                 font-family: "Rajdhani", sans-serif;
+                @media (max-width:767px) {
+                    font-size: 5rem;
+                    line-height: 6rem;
+                    }
+                    @media (max-width:767px) {
+                        font-size: 4rem;
+                        line-height: 4.5rem;
+                        }
 
                 span {
                     color: $red;
@@ -38,6 +54,14 @@
                 border-left: 0.2rem solid $red;
                 padding-left: 2rem;
                 margin: 2rem 0rem;
+                @media (max-width:767px) {
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                    }
+                    @media (max-width:767px) {
+                        font-size: 1.4rem;
+                        line-height: 2rem;
+                        }
 
             }
 
@@ -70,6 +94,14 @@
             {
                 width: 100%;
                 max-width: 62rem;
+                @media (max-width:991px) {
+                    margin: 0 auto;
+                    
+                }
+                @media (max-width:991px) {
+                  padding-top: 5rem;
+                    
+                }
 
             }
             img {
@@ -86,6 +118,10 @@
                 position: absolute;
                 z-index: -1;
                 animation: rotate 6s linear infinite;
+                @media (max-width:991px) {
+                  display: none;
+                      
+                  }
 
                 @keyframes rotate {
                     from {

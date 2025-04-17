@@ -6,7 +6,8 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "../../../../public/assets/mainlogo.png";
 import { Container } from "react-bootstrap";
-import { CloseSidebar, OpenSidebar } from "../../../../public/assets/icons";
+import { CloseSidebar, OpenSidebar, UserIcon } from "../../../../public/assets/icons";
+import smalllogo from "../../../../public/assets/small logo.png"
 
 const Header = () => {
   const router = useRouter();
@@ -49,6 +50,9 @@ useEffect(() => {
           <Link href={"/"} className="logo">
             <Image src={logo} alt="" />
           </Link>
+          <Link href={"/"} className="smalllogo">
+            <Image src={smalllogo} alt="" />
+          </Link>
           <ul className={show ? "active" : ""}>
             <button className="close_btn" onClick={() => setShow(false)}>
               <CloseSidebar />
@@ -60,7 +64,7 @@ useEffect(() => {
               <Link href="/Services">Services</Link>
             </li>
             <li>
-              <Link href="/Blog">Blog</Link>
+              <Link href="/blog">Blog</Link>
             </li>
             <li>
               <Link href="/Contact Us">Contact Us</Link>
@@ -74,10 +78,10 @@ useEffect(() => {
               Login
             </Button>
             <Button
-              className="border_btn"
+              className="border_btn sign_up"
               onClick={() => router.push("/signup")}
             >
-              Sign Up
+             <span>Sign Up</span><UserIcon/>
             </Button>
             <button onClick={() => setShow(true)} className="side_bar_toggle">
               <OpenSidebar />

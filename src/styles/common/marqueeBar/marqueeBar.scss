@@ -1,7 +1,14 @@
+@use "../../../../public/assets/_var.scss" as *;
 .marquee_box {
-    background: red;
+    background: $red;
     padding: 3rem 0rem;
     overflow: hidden;
+    @media (max-width:767px) {
+        padding: 2rem 0rem;
+    }
+    @media (max-width:575px) {
+        padding: 1.5rem 0rem;
+    }
 
     ul {
         display: flex;
@@ -19,6 +26,13 @@
             font-family: "rajdhani", sans-serif;
             display: flex;
             align-items: center;
+            @media (max-width:767px) {
+                font-size: 2.4rem;
+                line-height: 2rem;
+            }
+            @media (max-width:575px) {
+                font-size: 1.6rem;
+            }
 
             svg {
                 height: 2.6rem;

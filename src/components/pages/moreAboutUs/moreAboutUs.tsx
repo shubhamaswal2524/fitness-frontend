@@ -21,21 +21,28 @@ const MoreAboutUs = () => {
                     a healthy lifestyle and provide a top-notch fitness facility
                     to support you in your fitness journey.
                   </p>
-
                   <div className="tabs_box">
-                    <Nav variant="pills" className="nav">
-                      <Nav.Item>
-                        <Nav.Link eventKey="first">Tab 1</Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item>
-                        <Nav.Link eventKey="second">Tab 2</Nav.Link>
-                      </Nav.Item>
-                    </Nav>
-                    <Tab.Content>
-                      <Tab.Pane eventKey="first">Gyms play a vital role in promoting an active and healthy lifestyle. They provide a supportive and motivating environment for individuals to engage in regular physical activity.</Tab.Pane>
-                      <Tab.Pane eventKey="second">Gyms play a vital role in promoting an active and healthy lifestyle. They provide a supportive and motivating environment for individuals to engage in regular physical activity.</Tab.Pane>
-                    </Tab.Content>
-                  </div>
+          <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+            <Nav variant="tabs">
+              <Nav.Item>
+                <Nav.Link eventKey="first">Our Vision</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="second">Our Goal</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="third">Our Goal</Nav.Link>
+              </Nav.Item>
+            </Nav>
+            <Tab.Content>
+              <Tab.Pane eventKey="first">Gyms play a vital role in promoting an active and healthy lifestyle. They provide a supportive and motivating environment for individuals to engage in regular physical activity.
+                
+              </Tab.Pane>
+              <Tab.Pane eventKey="second">Gyms play a vital role in promoting an active and healthy lifestyle. They provide a supportive and motivating environment for individuals to engage in regular physical activity.</Tab.Pane>
+            </Tab.Content>
+            <Tab.Pane eventKey="third">Gyms play a vital role in promoting an active and healthy lifestyle. They provide a supportive and motivating environment for individuals to engage in regular physical activity.</Tab.Pane>
+          </Tab.Container>
+        </div>
                   <CommonArrowButton>Make Appointment</CommonArrowButton>
                 </div>
               </Col>
