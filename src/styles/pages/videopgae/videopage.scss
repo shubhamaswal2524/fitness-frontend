@@ -7,5 +7,13 @@
   background-size: cover;
   background-repeat: no-repeat;
   padding: 10rem 0rem;
-
+  @media (max-width:991px) {
+    height: 50rem;
+  }
+  @media (max-width:767px) {
+    height: 40rem;
+  }
+  @media (max-width:575px) {
+    height: 35em;
+  }
 }

@@ -67,7 +67,7 @@ useEffect(() => {
               <Link href="/blog">Blog</Link>
             </li>
             <li>
-              <Link href="/Contact Us">Contact Us</Link>
+              <Link href="/contact-us">Contact Us</Link>
             </li>
           </ul>
           <div className="action">
