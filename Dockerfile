@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
-# Copy the rest of the code
+# Copy the full app source
 COPY . .
 
 # Build the Next.js app
@@ -18,13 +18,15 @@ FROM node:18-alpine AS runner
 
 WORKDIR /app
 
+ENV NODE_ENV=production
+
 # Copy only what's needed to run
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
-
-ENV NODE_ENV=production
+COPY --from=builder /app/next.config.js ./next.config.js
+COPY --from=builder /app/src ./src  
 
 # Expose Next.js default port
 EXPOSE 3000
