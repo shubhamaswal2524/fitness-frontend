@@ -28,7 +28,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/styles/common/commonRadioBtn/commonRadioBtn.scs"
+    "src/styles/common/commonRadioBtn/commonRadioBtn.scs",
+    "**/*.svg",
+    "src/**/*.d.ts"
   ],
   "exclude": ["node_modules"]
 }
