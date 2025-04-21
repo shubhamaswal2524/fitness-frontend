@@ -1,6 +1,5 @@
 "use client";
 import Button from "@/components/common/button/button";
-import FileUpload from "@/components/common/fileupload/fileupload";
 import Input from "@/components/common/input/input";
 import Textarea from "@/components/common/textarea/textarea";
 import Uploadbox from "@/components/common/uploadbox/uploadbox";
@@ -164,31 +163,29 @@ const PersonalInfo = () => {
                   {" "}
                   <div className="field_in">
                     <Textarea
-                    label="About me"
+                      label="About me"
                       name="message"
                       id="message"
-                      cols="10"
-                      rows="1"
+                      cols={10}
+                      rows={1}
                       placeholder="Enter Your Message"
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      
                     />
                   </div>
                 </Col>
                 <Col xs={12} md={6} lg={6}>
                   {" "}
                   <div className="field_in">
-                  <Uploadbox label="Update Your Profile Picture"/>
+                    <Uploadbox label="Update Your Profile Picture" />
                   </div>
                 </Col>
                 <Col xs={12} md={6} lg={6}>
                   {" "}
                   <div className="field_in">
-                  <Uploadbox label="Update Your physic Picture"/>
+                    <Uploadbox label="Update Your physic Picture" />
                   </div>
                 </Col>
-            
               </Row>
               <div className="action">
                 <Button type="submit">Submit</Button>

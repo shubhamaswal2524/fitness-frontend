@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "./CommonSearch.scss";
-import { SearchIcon } from "../../../Assets/svgImgs/SvgIcons";
+// import { SearchIcon } from "../../../Assets/svgImgs/SvgIcons";
 
 // @ts-ignore
 import { debounce } from "lodash";
@@ -47,9 +47,7 @@ const CommonSearch: React.FC<CommonSearchProps> = ({
       <div className={`commonSearch ${className}`}>
         {label && <label className="searhLabel">{label}</label>}
         <div className="searchInput">
-          <span className="searchIcon">
-            <SearchIcon />
-          </span>
+          <span className="searchIcon">{/* <SearchIcon /> */}</span>
           <input
             onChange={(e: any) => {
               e.target.value === ""

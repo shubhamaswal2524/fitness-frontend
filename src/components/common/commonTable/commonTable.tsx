@@ -1,16 +1,14 @@
-import React, { ReactNode, useMemo, useState } from 'react';
-import './CommonTable.scss';
-import { Table } from 'react-bootstrap';
-import {
-  NoRecord,
-  SortDownIcon,
-  SortIcon,
-} from '../../../Assets/svgImgs/SvgIcons';
-import { useSelector } from 'react-redux';
-import Checkbox from '../FormInputs/Checkbox';
+import React, { ReactNode, useMemo, useState } from "react";
+import "./CommonTable.scss";
+import { Table } from "react-bootstrap";
+// import {
+//   NoRecord,
+// } from '../../../Assets/svgImgs/SvgIcons';
+import { useSelector } from "react-redux";
+// import Checkbox from '../FormInputs/Checkbox';
 
 const CommonTable = ({
-  className = '', // Default parameter
+  className = "", // Default parameter
   fields = [], // Default parameter
   sortbuttons = true, // Default parameter
   children,
@@ -36,7 +34,7 @@ const CommonTable = ({
 
   const filteredColumns = useMemo(() => {
     const particularPageColumns = userColumns?.find(
-      (column: any) => column?.moduleId == moduleId,
+      (column: any) => column?.moduleId == moduleId
     );
     return particularPageColumns?.columnNames || fields;
   }, [userColumns, moduleId, fields]);
@@ -46,7 +44,7 @@ const CommonTable = ({
       {filteredColumns && (
         <thead>
           <tr>
-            {selectAll ? (
+            {/* {selectAll ? (
               <Checkbox
                 label
                 onChange={() => {
@@ -54,11 +52,11 @@ const CommonTable = ({
                   selectAllFunction(!checked);
                 }}
               />
-            ) : null}
+            ) : null} */}
             {(editPermission
               ? filteredColumns
               : filteredColumns?.filter(
-                  (heading: string) => heading != 'Actions',
+                  (heading: string) => heading != "Actions"
                 )
             )?.map((item: any) => (
               <th key={item}>
@@ -82,15 +80,15 @@ const CommonTable = ({
         </thead>
       )}
       <tbody>
-        {(typeof children == 'object' && children?.length) ||
-        (typeof children != 'object' && children != undefined) ? (
+        {(typeof children == "object" && children?.length) ||
+        (typeof children != "object" && children != undefined) ? (
           children
         ) : (
           <tr className="no_record text-center">
             <td colSpan={fields?.length}>
               {noRecordFound || (
                 <div className="no_record_box">
-                  <NoRecord />
+                  {/* <NoRecord /> */}
                   <h4>No Record Found</h4>
                 </div>
               )}
