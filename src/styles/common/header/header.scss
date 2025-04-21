@@ -24,6 +24,17 @@ width: 100%;
             width: 100%;
             height: 100%;
         }
+        @media (max-width:575px) {
+            display: none;
+          }
+    }
+    .smalllogo
+    {
+      width: 5rem;
+      height: 5rem;
+      @media (min-width:575px) {
+        display: none;
+      }
     }
 
     &_in {
@@ -162,6 +173,27 @@ width: 100%;
                 display: block;
             }
 
+        }
+        .sign_up
+        {
+            svg{
+                display: none;
+                width: 2rem;
+                height: 2rem;
+                path{
+                    fill: $red;
+                }
+            }
+            @media (max-width:575px) {
+                span{
+                    display: none;
+                }
+                svg{
+                    display: block;
+                }
+                
+            }
+           
         }
     }
 

@@ -17,8 +17,8 @@ const AboutPage = () => {
             <Col lg={6}>
             <div className="about_page_right">
                 <h5></h5>
-                <h2><span>A Roadmap to Total Body</span>
-                fitness</h2>
+                <h2>A Roadmap to Total Body
+                <span>fitness</span></h2>
                 <p>Body fitness encompasses various aspects of physical health and well-being, involving a combination of exercise, nutrition, and lifestyle choices. Achieving and maintaining optimal body fitness contributes to overall health, vitality. Joining fitness classes, sports teams, or workout groups provides social support.</p>
                 <ul>
                     <li>

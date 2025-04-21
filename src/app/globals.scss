@@ -87,13 +87,29 @@ input[type="number"]::-webkit-inner-spin-button {
   line-height: 5.6rem;
   font-family: "rajdhani", sans-serif;
   text-transform: uppercase;
+
+  @media (max-width:1199px) {
+    font-size: 4rem;
+    line-height: 4.5rem;
+  }
+
+  @media (max-width:991px) {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+
+  @media (max-width:767px) {
+    font-size: 3rem;
+    line-height: 3.4rem;
+  }
+
   span {
     color: $red;
+    margin-left: 0.4rem;
   }
 }
 
-.error_message
-{
+.error_message {
   color: $red;
   margin-top: 0.3rem;
 }
