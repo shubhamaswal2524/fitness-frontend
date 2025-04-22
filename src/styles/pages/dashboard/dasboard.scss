@@ -1,0 +1,38 @@
+@use "../../../../public/assets/_var.scss" as *;
+
+.dashboard{
+ &_head{
+  .row{
+    margin: -1rem;
+    >div{
+      padding: 1rem;
+    }
+    .upper_box
+    {
+      @media (max-width:1449px) {
+        width: calc(100% / 2);
+        .performance_card
+        {
+          max-width: 100%;
+        }
+        
+      }
+      @media (max-width:899px) {
+        width: 100%;
+      }
+      @media (max-width:767px) {
+        width: calc(100% / 2);
+      }
+      @media (max-width:599px) {
+        width: 100% ;
+      }
+    }
+    .growth_box
+    {
+      @media (max-width:1449px) {
+        width: 100%;
+      }
+    }
+  }
+ }
+}

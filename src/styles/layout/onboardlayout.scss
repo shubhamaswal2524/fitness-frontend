@@ -1,0 +1,33 @@
+@use "../../../public/assets/_var.scss" as *;
+.onboard_layout {
+  background: url("../../../public/assets/onboardBg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10rem 2rem;
+  position: relative;
+  z-index: 0;
+&::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($black,0.8);
+  z-index: -1;
+}
+  &_in {
+    padding: 4rem;
+    border-radius: 1.8rem;
+    max-width: 60rem;
+    width: 100%;
+    background: $black;
+    box-shadow: 0 0rem 3rem rgba(162, 3, 3, 0.2);
+  }
+}

@@ -1,0 +1,115 @@
+@use "../../public/assets/_var.scss" as *;
+@use "../styles/index.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  background: $black;
+  color: $white;
+  font-family: "Rubik", sans-serif;
+  // overflow: hidden;
+}
+
+.container {
+  max-width: 127rem;
+  width: 100%;
+
+  @media (max-width: 991px) {
+    padding-inline: 1.5rem;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+input {
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px $black inset !important;
+    -webkit-text-fill-color: $white !important;
+  }
+}
+
+.big_heading {
+  font-size: 4rem;
+  line-height: normal;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+}
+
+/* Remove number input arrows */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.main_heading {
+  font-size: 4.6rem;
+  font-weight: 700;
+  line-height: 5.6rem;
+  font-family: "rajdhani", sans-serif;
+  text-transform: uppercase;
+
+  @media (max-width:1199px) {
+    font-size: 4rem;
+    line-height: 4.5rem;
+  }
+
+  @media (max-width:991px) {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+
+  @media (max-width:767px) {
+    font-size: 3rem;
+    line-height: 3.4rem;
+  }
+
+  span {
+    color: $red;
+    margin-left: 0.4rem;
+  }
+}
+
+.error_message {
+  color: $red;
+  margin-top: 0.3rem;
+}

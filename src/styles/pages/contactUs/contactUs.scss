@@ -1,0 +1,128 @@
+@use "../../../../public/assets/_var.scss" as *;
+
+.contact_us {
+  width: 100%;
+  padding: 12.4rem 0rem 5rem;
+  @media (max-width:991px) {
+    padding: 9.4rem 0rem 5rem;
+    
+}
+@media (max-width:767px) {
+    padding: 7rem 0rem 5rem;
+    
+}
+  &_head {
+    background-image: url("../../../../public/assets/bmiBg.png");
+    background-position: center center;
+    background-size: cover;
+    padding: 10rem 0rem;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: $white;
+    position: relative;
+    z-index: 0;
+    @media (max-width:767px) {
+        padding: 7rem 0rem;
+    }
+    &::after
+    {
+        content: "";
+        background: rgba($black, 0.4);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    h1 {
+        font-size: 6.5rem;
+        font-weight: 600;
+        line-height: 7rem;
+        @media (max-width:767px) {
+            font-size: 5rem;
+            line-height: 5.5rem;
+         }
+         @media (max-width:575px) {
+            font-size: 4rem;
+            line-height: 4.5rem;
+         }
+    }
+
+    p {
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 2.4rem;
+        @media (max-width:767px) {
+            font-size: 1.6rem;
+            line-height:2rem;
+         }
+       
+    }
+}
+ 
+  &_in {
+    color: $white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem ;
+    background: rgba( $white , 0.1);
+    width: max-content;
+    border-radius: 1.2rem;
+    margin: 5rem auto;
+
+    .main_heading{
+      margin-bottom: 3rem;
+    }
+
+    form {
+      max-width: 80rem;
+      width: 100%;
+      .row{
+        margin: -1rem;
+        >div{
+          padding: 1rem;
+        }
+      }
+      .field_in {
+        &:not(:last-child) {
+          margin-bottom: 1.5rem;
+        }
+        input{
+          max-width: 100%;
+        }
+      }
+
+     
+
+      .forget_pass {
+        padding: 0.4rem 0rem 2rem 0rem;
+        margin-top: -1.4rem;
+        text-align: right;
+
+        a {
+          font-size: 1.5rem;
+          font-weight: 400;
+          line-height: 2rem;
+          color: $red;
+        }
+      }
+      .action
+      {
+        padding: 2rem 0rem;
+        text-align: right;
+        button{
+          width: 20rem;
+        }
+      }
+    }
+  }
+
+}

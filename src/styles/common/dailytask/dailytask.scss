@@ -1,0 +1,120 @@
+@use "../../../../public/assets/_var.scss" as *;
+
+.daily_task_card {
+    width: 100%;
+    background: rgba($white, 0.1);
+    border-radius: 1.8rem;
+    position: relative;
+    z-index: 0;
+    height: 100%;
+   
+
+    .routine {
+        position: absolute;
+        top: 1.5rem;
+        right: 0rem;
+        font-size: 2rem;
+        font-family: rajdhani;
+        font-weight: 700;
+        line-height: 2.4rem;
+        margin-bottom: 0.8rem;
+        color: $white;
+        text-transform: uppercase;
+        background: $red;
+        border-radius: 0.8rem 0rem 0rem 0.8rem;
+        padding: 0.5rem;
+        width: 6.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .text_content {
+        padding: 3rem 2rem 2rem;
+
+        h2 {
+            font-size: 2.4rem;
+            font-family: rajdhani;
+            font-weight: 700;
+            line-height: 2.6rem;
+            margin-bottom: 0.8rem;
+            color: $red;
+            width: 100%;
+            text-transform: uppercase;
+        }
+
+        ul {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+
+            li {
+                width: calc(100% / 3 - 1rem);
+                padding: 2rem;
+                border-radius: 1.2rem;
+                background: $black;
+                color: $white;
+                @media (max-width:1299px) {
+                    width: calc(100% / 2 - 1rem);
+                }
+                @media (max-width:575px) {
+                    width: 100% ;
+                }
+
+                &:not(:last-child) {
+                    margin: 1rem 1rem 1rem 0rem ;
+                }
+                h4 {
+                    text-transform: capitalize;
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    line-height: 2.2rem;
+                    color: $red;
+                    margin-bottom: 0.4rem;
+                    
+                }
+
+                h5 {
+                    text-transform: capitalize;
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    line-height: 2rem;
+                    margin-bottom: 0.4rem;
+                }
+
+                
+            }
+        }
+.inner
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 0;
+    &::after
+    {
+        content: "";
+        position: absolute;
+        height: 2rem;
+        width: 0.1rem;
+        background: $red;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    p {
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 2rem;
+        span{
+            margin-left: 0.4rem;
+            color: rgba($white, 0.6);
+        }
+    }
+}
+
+    }
+}
