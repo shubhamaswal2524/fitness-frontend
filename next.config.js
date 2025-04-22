@@ -1,16 +1,7 @@
 const nextConfig = {
   eslint: {
-    ignoreDuringBuilds: true,
-  },
-  output: "standalone",
-  reactStrictMode: true,
-  swcMinify: true,
-  images: {
-    unoptimized: true,
-  },
-  experimental: {
-    serverActions: true,
+    ignoreDuringBuilds: true, // Ignore ESLint errors during build
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
