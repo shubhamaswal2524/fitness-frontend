@@ -1,0 +1,44 @@
+@use "../../../../public/assets/_var.scss" as *;
+
+.consultancy{
+  padding: 10rem 0rem ;
+  background-image: url("../../../../public/assets/mainBg.png");
+  background-position: center center;
+  .consultancy_right
+  {
+    .main_heading{
+      span{
+        margin: 0 0.4rem;
+      }
+    }
+    .contact_number
+    {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+      svg{
+        width: 4rem;
+        height: 4rem;
+        path{
+          fill: $red;
+        }
+      }
+      h4{
+        font-size: 1.8rem;
+        font-weight: 600;
+        line-height: 2.2rem;
+        color: $white;
+        margin-bottom: 0.4rem;
+      }
+      p{
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 2rem;
+        color: $white;
+       
+      }
+    }
+  }
+}

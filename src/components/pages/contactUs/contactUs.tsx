@@ -3,30 +3,24 @@ import Button from "@/components/common/button/button";
 import Input from "@/components/common/input/input";
 import MarqueeBar from "@/components/common/marqueeBar/marqueeBar";
 import Textarea from "@/components/common/textarea/textarea";
-import Uploadbox from "@/components/common/uploadbox/uploadbox";
-import { apiHelper } from "@/services/api.services";
-import { useFormik } from "formik";
-import { useRouter } from "next/navigation";
 import { Col, Container, Row } from "react-bootstrap";
-import * as Yup from "yup";
 
 const ContactUs = () => {
+
   return (
     <>
       <section className="contact_us">
-        <div className="contact_us_head">
-          <h1 className="main_heading">
-            Contact <span>US</span>
-          </h1>
-          <p>Home / Contact us</p>
-        </div>
-        <MarqueeBar />
+      <div className="contact_us_head">
+        <h1 className="main_heading">
+          Contact <span>US</span>
+        </h1>
+        <p>Home / Contact us</p>
+      </div>
+      <MarqueeBar />
         <Container>
           <div className="contact_us_in">
-            <h1 className="main_heading ">
-              Send Us <span>Message</span>
-            </h1>
-            <form>
+            <h1 className="main_heading ">Send Us <span>Message</span></h1>
+            <form >
               <Row>
                 <Col xs={12} md={6} lg={6}>
                   {" "}
@@ -52,7 +46,7 @@ const ContactUs = () => {
                     />
                   </div>
                 </Col>
-                <Col lg={12}>
+                <Col  lg={12}>
                   <div className="field_in">
                     <Input
                       label="Subject "
@@ -67,12 +61,13 @@ const ContactUs = () => {
                   {" "}
                   <div className="field_in">
                     <Textarea
-                      label="About me"
+                    label="About me"
                       name="message"
                       id="message"
-                      cols={10}
-                      rows={1}
+                      cols="10"
+                      rows="1"
                       placeholder="Enter Your Message"
+                     
                     />
                   </div>
                 </Col>

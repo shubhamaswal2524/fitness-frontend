@@ -1,6 +1,5 @@
-import React from "react";
 import Marquee from "react-fast-marquee";
-import { Starcon } from "../../../../public/assets/icons";
+import { StarIcon } from "../../../../public/assets/icons";
 
 const MarqueeBar = () => {
   const data = [
@@ -40,7 +39,7 @@ const MarqueeBar = () => {
           <ul>
             {data.map((item, i) => (
               <li key={i}>
-                <Starcon />
+                <StarIcon />
                 {item.line}
               </li>
             ))}

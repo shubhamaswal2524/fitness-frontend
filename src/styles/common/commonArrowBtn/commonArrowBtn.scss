@@ -14,6 +14,16 @@
   transition: all .3s ease-in-out;
   position: relative;
   z-index: 0;
+  @media (max-width:767px) {
+    min-height: 4rem;
+    padding: 0rem 1.5rem;
+    font-size: 1.5rem;
+}
+@media (max-width:575px) {
+    min-height: 3.5rem;
+    font-size: 1.3rem;
+
+}
 
   &:hover {
     border: .1rem solid $red;
@@ -43,6 +53,17 @@
     border-radius: 100%;
     pointer-events: none;
     border: 0.4rem solid $black;
+    @media (max-width:767px) {
+      width: 4rem;
+      height: 4rem;
+      right: -3rem;
+  }
+  @media (max-width:575px) {
+    width: 3.5rem;
+      height: 3.5rem;
+      right: -2.2rem;
+  
+  }
 
     svg {
       width: 100%;

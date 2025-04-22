@@ -2,6 +2,14 @@
 
 .about_main {
     padding: 12.4rem 0rem 10rem 0rem;
+    @media (max-width:991px) {
+        padding: 9.4rem 0rem 5rem;
+        
+    }
+    @media (max-width:767px) {
+        padding: 7rem 0rem 5rem;
+        
+    }
 
     .about_head {
         background-image: url("../../../../public/assets/bmiBg.png");
@@ -57,6 +65,9 @@
         }
     }
     .tabs_box {
+        nav{
+            border: none;
+          }
         .nav-item {
             .nav-link {
                 border-radius: .5rem;
@@ -84,6 +95,14 @@
 
     .user_slide_box {
         padding: 10rem 0rem;
+
+        @media (max-width:767px) {
+            padding: 7rem 0rem;
+        }
+        
+        @media (max-width:575px) {
+            padding: 5rem 0rem;
+        }
         .user_slide_box_head
         {
 

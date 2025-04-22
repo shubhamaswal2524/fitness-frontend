@@ -1,7 +1,15 @@
 @use "../../../../public/assets/_var.scss" as *;
 
 .blog_page {
-    padding: 12.4rem 0rem 5rem;
+    padding: 12.4rem 0rem 0rem ;
+    @media (max-width:991px) {
+        padding: 9.4rem 0rem  0rem;
+        
+    }
+    @media (max-width:767px) {
+        padding: 7rem 0rem  0rem;
+        
+    }
 
     .blog_head {
         background-image: url("../../../../public/assets/bmiBg.png");

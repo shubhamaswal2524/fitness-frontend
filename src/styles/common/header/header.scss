@@ -4,17 +4,17 @@
     color: $white;
     padding: 3rem 0rem;
     position: fixed;
-width: 100%;
+    width: 100%;
     top: 0;
     left: 0;
     z-index: 99;
     background: transparent;
     backdrop-filter: blur(1rem);
     transition: 0.3s ease-in-out all;
-    // &.active{
-    //     position: fixed;
-    // }
 
+    @media (max-width:991px) {
+        padding: 1.5rem 0rem;
+    }
     .logo {
         max-width: 21.8rem;
         width: 100%;
@@ -24,17 +24,25 @@ width: 100%;
             width: 100%;
             height: 100%;
         }
+
         @media (max-width:575px) {
             display: none;
-          }
+        }
     }
-    .smalllogo
-    {
-      width: 5rem;
-      height: 5rem;
-      @media (min-width:575px) {
-        display: none;
-      }
+
+    .smalllogo {
+        width: 4rem;
+        height: 4rem;
+
+        @media (min-width:575px) {
+            display: none;
+        }
+        
+        
+        img{
+            width: 100%;
+            height: 100%;
+        }
     }
 
     &_in {
@@ -54,7 +62,8 @@ width: 100%;
             top: 0;
             left: 0;
             padding: 5rem 3rem;
-            width: 35rem;
+            max-width: 35rem;
+            width: 100%;
             height: 100vh;
             background: $black;
             flex-direction: column;
@@ -172,28 +181,35 @@ width: 100%;
             @media (max-width:991px) {
                 display: block;
             }
+            @media (max-width:575px) {
+              height: 3.5rem;
+        
+            }
 
         }
-        .sign_up
-        {
-            svg{
+
+        .sign_up {
+            svg {
                 display: none;
                 width: 2rem;
                 height: 2rem;
-                path{
+
+                path {
                     fill: $red;
                 }
             }
+
             @media (max-width:575px) {
-                span{
+                span {
                     display: none;
                 }
-                svg{
+
+                svg {
                     display: block;
                 }
-                
+
             }
-           
+
         }
     }
 
