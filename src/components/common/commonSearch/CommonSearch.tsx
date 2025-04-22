@@ -1,9 +1,8 @@
-import React, { useCallback, useEffect, useState } from "react";
-import "./CommonSearch.scss";
-// import { SearchIcon } from "../../../Assets/svgImgs/SvgIcons";
+import React, { useCallback, useEffect, useState } from 'react';
+import './CommonSearch.scss';
 
 // @ts-ignore
-import { debounce } from "lodash";
+import { debounce } from 'lodash';
 
 type CommonSearchProps = {
   label?: string;
@@ -20,17 +19,17 @@ const CommonSearch: React.FC<CommonSearchProps> = ({
   className,
   searchFunction,
 }: any) => {
-  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
   const debouncedSearchFunction = useCallback(
     debounce((term: string) => {
       if (term.length > 2) {
-        searchFunction(term.includes("@") ? { email: term } : { name: term });
+        searchFunction(term.includes('@') ? { email: term } : { name: term });
       } else {
         searchFunction({});
       }
     }, 500), // Adjust the debounce delay as needed
-    [searchFunction]
+    [searchFunction],
   );
 
   useEffect(() => {
@@ -47,11 +46,13 @@ const CommonSearch: React.FC<CommonSearchProps> = ({
       <div className={`commonSearch ${className}`}>
         {label && <label className="searhLabel">{label}</label>}
         <div className="searchInput">
-          <span className="searchIcon">{/* <SearchIcon /> */}</span>
+          <span className="searchIcon">
+            {/* <SearchIcon /> */}
+          </span>
           <input
             onChange={(e: any) => {
-              e.target.value === ""
-                ? setSearchTerm("")
+              e.target.value === ''
+                ? setSearchTerm('')
                 : setSearchTerm(e.target.value);
             }}
             value={searchTerm}

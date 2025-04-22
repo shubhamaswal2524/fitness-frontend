@@ -1,12 +1,11 @@
-import React from "react";
-import Hero from "./hero/hero";
-import Login from "./login/login";
-import Signup from "./signup/signup";
 import MarqueeBar from "@/components/common/marqueeBar/marqueeBar";
-import BmiPage from "../bmi-page/bmiPage";
-import Videopage from "../videopage/videopage";
-import Price from "../price/price";
 import AboutPage from "../aboutUs/aboutUs";
+import BmiPage from "../bmi-page/bmiPage";
+import Price from "../price/price";
+import Videopage from "../videopage/videopage";
+import Hero from "./hero/hero";
+import Consultancy from "../consultancy/consultancy";
+import BlogList from "../blogList/blogList";
 const Homepage = () => {
   return (
     <div className="homepage_design">
@@ -16,6 +15,8 @@ const Homepage = () => {
       <Price/>
       <AboutPage/>
       <Videopage/>
+      <Consultancy/>
+      <BlogList/>
     </div>
   );
 };

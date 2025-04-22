@@ -1,0 +1,82 @@
+@use "../../../../public/assets/_var.scss" as *;
+
+.blogList_page {
+    padding: 10rem 0rem;
+    background-image: url("../../../../public/assets/mainBg.png");
+    background-position: center center;
+
+    @media (max-width:767px) {
+        padding: 7rem 0rem;
+    }
+
+    @media (max-width:575px) {
+        padding: 5rem 0rem;
+    }
+
+    .blogList_page_in {
+        text-align: center;
+        p {
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 2.5rem;
+            text-transform: capitalize;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                margin-right: 0.4rem;
+
+                svg {
+                    width: 3.4rem;
+                }
+            }
+        }
+
+            .slick-dots {
+                display: none;
+            }
+
+            .slick-arrow {
+                display: none !important;
+            }
+
+            .slick-slider {
+                padding-top: 5rem;
+                .slick-slide {
+                    padding: 0rem 1.6rem;
+
+                    .inner_content {
+                        border-radius: 1.2rem;
+                        
+                        .bloger_img {
+                            width: 100%;
+                            max-height: 30rem;
+                            object-fit: cover;
+                            border-radius: 2rem;
+                        }
+
+                       .bloger_name
+                       {
+                           margin-top: 1.5rem;
+                        h3 {
+                            font-size: 2rem;
+                            font-weight: 600;
+                            margin: 1.5rem 0rem 1rem 0rem;
+                            margin-top: auto;
+                        }
+
+                        p {
+                            font-size: 1.5rem;
+                            font-weight: 400;
+                            line-height: 2rem;
+                            color: rgba($white, 0.6);
+                            margin-bottom: 1.5rem;
+                        }
+                       }
+                    }
+                }
+
+            }
+    }
+}

@@ -16,7 +16,6 @@ const CommonOtp = (props: any) => {
 
         onChange={setOtp}
         numInputs={6}
-        // renderSeparator={<span>-</span>}
         renderInput={(props) => <input {...props} />}
       />
      </div>

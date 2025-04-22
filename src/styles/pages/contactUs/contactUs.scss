@@ -2,7 +2,15 @@
 
 .contact_us {
   width: 100%;
-  padding-top: 12.4rem;
+  padding: 12.4rem 0rem 5rem;
+  @media (max-width:991px) {
+    padding: 9.4rem 0rem 5rem;
+    
+}
+@media (max-width:767px) {
+    padding: 7rem 0rem 5rem;
+    
+}
   &_head {
     background-image: url("../../../../public/assets/bmiBg.png");
     background-position: center center;
