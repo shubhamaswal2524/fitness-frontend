@@ -3,6 +3,12 @@
 .footer {
     padding: 9rem 0rem 0rem 0rem;
     margin-top: auto;
+    @media (max-width:767px) {
+        padding: 6rem 0rem 0rem 0rem;
+    }
+    @media (max-width:575px) {
+        padding: 4rem 0rem 0rem 0rem;
+    }
 
     &_in {
         .logo_box {
@@ -20,12 +26,20 @@
                 font-weight: 500;
                 line-height: 2rem;
                 margin-top: 1.9rem;
+                @media (max-width:767px) {
+                    font-size: 1.5rem;
+                }
+                @media (max-width:575px) {
+                    font-size: 1.3rem;
+                }
 
             }
 
             .box_input {
                 margin-top: 4rem;
                 border-bottom: 0.1rem solid rgba($white, 0.6);
+                position: relative;
+                z-index: 0;
 
                 input {
                     background: transparent;
@@ -42,6 +56,10 @@
                     background: transparent;
                     border: none;
                     color: $white;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
                     svg{
                         width: 1.8rem;
                         height: 1.3rem;

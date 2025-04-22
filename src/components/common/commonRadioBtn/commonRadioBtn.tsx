@@ -1,12 +1,6 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-// type radiotype = {
-//   id?: string;
-//   label?: string;
-//   name?: string;
-// };
-
 const CommonRadioBtn = ({ id, name, label }: any) => {
   return (
     <>

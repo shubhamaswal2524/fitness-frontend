@@ -29,6 +29,12 @@
       line-height: 1.6rem;
       font-weight: 600;
       margin-left: 0.5rem;
+      @media (max-width:767px) {
+        font-size: 1.4rem;
+      }
+      @media (max-width:575px) {
+        font-size: 1.3rem;
+      }
     }
   }
 }

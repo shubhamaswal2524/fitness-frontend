@@ -23,7 +23,7 @@ const MoreAboutUs = () => {
                   </p>
                   <div className="tabs_box">
           <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-            <Nav variant="tabs">
+            <Nav variant="tabs" className="nav">
               <Nav.Item>
                 <Nav.Link eventKey="first">Our Vision</Nav.Link>
               </Nav.Item>
@@ -36,11 +36,10 @@ const MoreAboutUs = () => {
             </Nav>
             <Tab.Content>
               <Tab.Pane eventKey="first">Gyms play a vital role in promoting an active and healthy lifestyle. They provide a supportive and motivating environment for individuals to engage in regular physical activity.
-                
               </Tab.Pane>
               <Tab.Pane eventKey="second">Gyms play a vital role in promoting an active and healthy lifestyle. They provide a supportive and motivating environment for individuals to engage in regular physical activity.</Tab.Pane>
-            </Tab.Content>
             <Tab.Pane eventKey="third">Gyms play a vital role in promoting an active and healthy lifestyle. They provide a supportive and motivating environment for individuals to engage in regular physical activity.</Tab.Pane>
+            </Tab.Content>
           </Tab.Container>
         </div>
                   <CommonArrowButton>Make Appointment</CommonArrowButton>

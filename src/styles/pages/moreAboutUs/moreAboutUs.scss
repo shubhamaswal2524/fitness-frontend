@@ -9,23 +9,25 @@
   background-size: cover;
   padding-top: 5rem;
 
-  .container {
-    max-width: 161.1rem;
-    width: 100%;
-    padding-inline: 1.5rem;
+  @media (max-width:991px) {
+    min-height: auto;
+
   }
 
   .row {
-    align-items: center;
+    align-items: flex-end;
+
 
   }
 
   &_in {
     .more_About_Us_left {
+      max-width: 82.1rem;
+
 
       img {
-        max-width: 82.1rem;
         width: 100%;
+        height: 100%;
 
       }
 
@@ -34,36 +36,40 @@
     .more_About_Us_right {
       max-width: 62rem;
       width: 100%;
+      padding-bottom: 5rem;
 
-.tabs_box {
-  padding: 3rem 0rem;
-  nav{
-    border: none;
-  }
-  .nav-item {
-      .nav-link {
-          border-radius: .5rem;
-          border: 0;
-          font-weight: 600;
-          font-size: 1.4rem;
-          padding: .5rem 1.6rem;
-          color: white;
+      .tabs_box {
+        padding: 3rem 0rem;
 
-          &.active {
+        .nav {
+          border: none;
+        }
+
+        .nav-item {
+          .nav-link {
+            border-radius: .5rem;
+            border: 0;
+            font-weight: 600;
+            font-size: 1.4rem;
+            padding: .5rem 1.6rem;
+            color: white;
+
+            &.active {
               background: $red;
+            }
           }
-      }
-  }
+        }
 
-  .tab-content {
-      font-weight: 400;
-      line-height: 2rem;
-      border-top: 0.1rem solid rgba(white, 0.1);
-      font-size: 1.4rem;
-      padding: 2rem 0rem;
-      margin-top: 2rem;
-  }
-}
+        .tab-content {
+          font-weight: 400;
+          line-height: 2rem;
+          border-top: 0.1rem solid rgba(white, 0.1);
+          font-size: 1.4rem;
+          padding: 2rem 0rem;
+          margin-top: 2rem;
+        }
+      }
+
       h2 {
         font-size: 4.6rem;
         font-weight: 700;
@@ -72,8 +78,25 @@
         font-family: "rajdhani", sans-serif !important;
         text-transform: uppercase;
 
+        @media (max-width:1199px) {
+          font-size: 4rem;
+          line-height: 4.5rem;
+        }
+
+        @media (max-width:991px) {
+          font-size: 3.5rem;
+          line-height: 4rem;
+        }
+
+        @media (max-width:767px) {
+          font-size: 3rem;
+          line-height: 3.4rem;
+          margin-bottom: 1rem;
+        }
+
         span {
           color: $red;
+          margin-left: 0.4rem;
         }
       }
 
@@ -81,6 +104,21 @@
         font-size: 1.8rem;
         font-weight: 400;
         line-height: 2.8rem;
+
+
+        @media (max-width:991px) {
+          font-size: 1.6rem;
+          line-height: 2rem;
+        }
+
+        @media (max-width:767px) {
+          font-size: 1.5rem;
+        }
+
+        @media (max-width:575px) {
+          font-size: 1.3rem;
+        }
+
       }
 
     }
