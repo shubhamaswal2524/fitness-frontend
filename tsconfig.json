@@ -30,7 +30,8 @@
     ".next/types/**/*.ts",
     "src/styles/common/commonRadioBtn/commonRadioBtn.scs",
     "**/*.svg",
-    "src/**/*.d.ts"
+    "src/**/*.d.ts",
+    "next.config.js"
   ],
   "exclude": ["node_modules"]
 }
