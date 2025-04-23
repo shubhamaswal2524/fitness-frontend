@@ -6,12 +6,16 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "../../../../public/assets/mainlogo.png";
 import { Container } from "react-bootstrap";
-import { CloseSidebar, OpenSidebar, UserIcon } from "../../../../public/assets/icons";
-import smalllogo from "../../../../public/assets/small logo.png"
+import {
+  CloseSidebar,
+  OpenSidebar,
+  UserIcon,
+} from "../../../../public/assets/icons";
+import smalllogo from "../../../../public/assets/small logo.png";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const router = useRouter();
-  console.log("Router:", router);
 
   const [show, setShow] = useState(false);
 
@@ -23,25 +27,25 @@ const Header = () => {
     }
   }, [show]);
 
-useEffect(() => {
-  const handleScroll = () => {
-    if (window.scrollY > 300) {
-      const header = document.querySelector('.header');
-      if (header) {
-        header.classList.add('active');
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        const header = document.querySelector(".header");
+        if (header) {
+          header.classList.add("active");
+        }
+      } else {
+        const header = document.querySelector(".header");
+        if (header) {
+          header.classList.remove("active");
+        }
       }
-    } else {
-      const header = document.querySelector('.header');
-      if (header) {
-        header.classList.remove('active');
-      }
-    }
-  };
-  window.addEventListener('scroll', handleScroll);
-  return () => {
-    window.removeEventListener('scroll', handleScroll);
-  };
-}, []);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <header className="header">
       <div className={`overlay ${show ? "active" : ""}`}></div>
@@ -81,7 +85,8 @@ useEffect(() => {
               className="border_btn sign_up"
               onClick={() => router.push("/signup")}
             >
-             <span>Sign Up</span><UserIcon/>
+              <span>Sign Up</span>
+              <UserIcon />
             </Button>
             <button onClick={() => setShow(true)} className="side_bar_toggle">
               <OpenSidebar />

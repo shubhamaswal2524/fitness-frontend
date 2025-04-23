@@ -12,10 +12,10 @@ import CommonCheckbox from "@/components/common/commonCheckbox/commonCheckbox";
 import { useRegisterMutation } from "@/lib/slices/auth/authApiSlice";
 
 interface FormValues {
-  first_name: string;
-  last_name: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  phone_number: string;
+  phoneNumber: string;
   password: string;
 }
 
@@ -25,18 +25,18 @@ const Signup = () => {
   const [register] = useRegisterMutation();
   const formik = useFormik<FormValues>({
     initialValues: {
-      first_name: "",
-      last_name: "",
+      firstName: "",
+      lastName: "",
       email: "",
-      phone_number: "",
+      phoneNumber: "",
       password: "",
     },
     validationSchema: Yup.object({
-      first_name: Yup.string()
+      firstName: Yup.string()
         .min(2, "First name must be at least 2 characters")
         .max(50, "First name cannot be more than 50 characters")
         .required("First name is required"),
-      last_name: Yup.string()
+      lastName: Yup.string()
         .min(2, "Last name must be at least 2 characters")
         .max(50, "Last name cannot be more than 50 characters")
         .required("Last name is required"),
@@ -44,7 +44,7 @@ const Signup = () => {
         .email("Invalid email address")
         .max(100, "Email cannot be more than 100 characters")
         .required("Email is required"),
-      phone_number: Yup.string()
+      phoneNumber: Yup.string()
         .matches(
           /^[1-9]\d{9}$/,
           "Mobile number must be exactly 10 digits and cannot start with 0"
@@ -56,17 +56,13 @@ const Signup = () => {
     }),
     onSubmit: async (values, { setSubmitting, resetForm }) => {
       try {
-        const { phone_number } = values;
+        const { phoneNumber } = values;
+        console.log("vahguygyuglues", values);
 
         const response = await register({
           ...values,
-          phone_number: phone_number?.toString(),
+          phoneNumber: phoneNumber?.toString(),
         }).unwrap();
-
-        // const response: any = await apiHelper.post("/create", {
-        //   ...values,
-        //   phone_number: phone_number?.toString(),
-        // });
 
         if (response?.status == 200 || response?.status == 201) {
           router.push("/login");
@@ -108,44 +104,40 @@ const Signup = () => {
               <div className="field_in">
                 <Input
                   label="First Name"
-                  id="first_name"
-                  name="first_name"
+                  id="firstName"
+                  name="firstName"
                   type="text"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  value={formik.values.first_name}
+                  value={formik.values.firstName}
                   error={
-                    formik.touched.first_name ? formik.errors.first_name : ""
+                    formik.touched.firstName ? formik.errors.firstName : ""
                   }
                 />
               </div>
               <div className="field_in">
                 <Input
                   label="Last Name"
-                  id="last_name"
-                  name="last_name"
+                  id="lastName"
+                  name="lastName"
                   type="text"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  value={formik.values.last_name}
-                  error={
-                    formik.touched.last_name ? formik.errors.last_name : ""
-                  }
+                  value={formik.values.lastName}
+                  error={formik.touched.lastName ? formik.errors.lastName : ""}
                 />
               </div>
               <div className="field_in">
                 <Input
                   label="Mobile number"
-                  id="phone_number"
-                  name="phone_number"
+                  id="phoneNumber"
+                  name="phoneNumber"
                   type="number"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  value={formik.values.phone_number}
+                  value={formik.values.phoneNumber}
                   error={
-                    formik.touched.phone_number
-                      ? formik.errors.phone_number
-                      : ""
+                    formik.touched.phoneNumber ? formik.errors.phoneNumber : ""
                   }
                 />
               </div>
