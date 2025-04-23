@@ -21,6 +21,7 @@ const Price = () => {
           <div className="card_box">
             <PriceCard className="active" />
             <PriceCard />
+      
           </div>
           <ul className="options">
             <li><MiniCelenderIcon/>Get 30 day free trial</li>

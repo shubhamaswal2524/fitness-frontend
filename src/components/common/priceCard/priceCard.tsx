@@ -9,6 +9,7 @@ const PriceCard = (
 ) => {
   return (
     <div className={`price_card ${className || ""}`}>
+      <div className="batch_badge">ashasuh</div>
       <p>12 WEEK PASS</p>
       <h2>
         <span className="doller_sign">$</span>
