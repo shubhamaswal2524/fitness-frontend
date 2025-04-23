@@ -2,9 +2,10 @@
 
 import Slider from "react-slick";
 import { Container } from "react-bootstrap";
-import { DumbleIcon } from "../../../../public/assets/icons";
+import { DumbleIcon, PlayIcon } from "../../../../public/assets/icons";
 import Image from "next/image";
 import Bloger from "../../../../public/assets/bloger.jpg";
+import Link from "next/link";
 
 const BlogList = () => {
   const settings = {
@@ -25,14 +26,14 @@ const BlogList = () => {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 767,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 400,
+        breakpoint: 575,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -50,29 +51,48 @@ const BlogList = () => {
               <span>
                 <DumbleIcon />
               </span>
-              Our Services
+              Our Blog
             </p>
-            <h1 className="main_heading">Service We Provide</h1>
+            <h1 className="main_heading">Featured <span>Talks</span> & <span>Stories</span></h1>
             <Slider {...settings}>
-            <div className="inner_content">
-                <Image className=" bloger_img" src={Bloger} alt="" />
+              <div className="inner_content">
+                <div className="bloger_img_box">
+                  <Image src={Bloger} alt="" />
+                  <Link href={"_blank"}><PlayIcon/>Watch More</Link>
+                </div>
                 <div className="bloger_name">
-                  <h3>Lorem ipsum dolor sit.</h3>
-                  <p>Lorem ipsum dolor sit.</p>
+                  <h3>jashanpreet singh</h3>
+                  <p>mohali</p>
                 </div>
               </div>
               <div className="inner_content">
-                <Image className=" bloger_img" src={Bloger} alt="" />
+                <div className="bloger_img_box">
+                  <Image src={Bloger} alt="" />
+                  <Link href={"_blank"}><PlayIcon/>Watch More</Link>
+                </div>
                 <div className="bloger_name">
-                  <h3>Lorem ipsum dolor sit.</h3>
-                  <p>Lorem ipsum dolor sit.</p>
+                  <h3>jashanpreet singh</h3>
+                  <p>mohali</p>
                 </div>
               </div>
               <div className="inner_content">
-                <Image className=" bloger_img" src={Bloger} alt="" />
+                <div className="bloger_img_box">
+                  <Image src={Bloger} alt="" />
+                  <Link href={"_blank"}><PlayIcon/>Watch More</Link>
+                </div>
                 <div className="bloger_name">
-                  <h3>Lorem ipsum dolor sit.</h3>
-                  <p>Lorem ipsum dolor sit.</p>
+                  <h3>jashanpreet singh</h3>
+                  <p>mohali</p>
+                </div>
+              </div>
+              <div className="inner_content">
+                <div className="bloger_img_box">
+                  <Image src={Bloger} alt="" />
+                  <Link href={"_blank"}><PlayIcon/>Watch More</Link>
+                </div>
+                <div className="bloger_name">
+                  <h3>jashanpreet singh</h3>
+                  <p>mohali</p>
                 </div>
               </div>
             </Slider>

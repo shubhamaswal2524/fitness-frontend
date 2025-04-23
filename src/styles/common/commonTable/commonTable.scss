@@ -3,41 +3,62 @@
 .common_table {
   width: 100%;
   overflow-x: auto;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  border-radius: 0.5rem;
+  border-radius: 1.2rem;
+  appearance: none;
+  border: 0.1rem solid $red;
 
   table {
     width: 100%;
     font-size: 0.875rem;
 
     thead {
-      background-color: #7f1d1d;
-      color: white;
-
+      color: $white;
+      
       th {
+        background: $red;
         padding: 1rem 1.5rem;
         text-align: left;
-        font-weight: 600;
-        letter-spacing: 0.05em;
+        font-size: 1.6rem;
+        line-height: 2rem;
+        font-weight: 500;
+        color: $white;
+        text-transform: capitalize;
+        border: none;
+        &:first-child
+        {
+          border-top-left-radius: 1.2rem;
+        }
+        &:last-child
+        {
+          border-top-right-radius: 1.2rem;
+        }
       }
     }
 
     tbody {
-      background-color: rgba(0, 0, 0, 0.05);
-
       tr {
-        border-bottom: 1px solid #fecaca;
+        border-bottom: 1px solid transparent;
         cursor: pointer;
         transition: background-color 0.2s;
-
-        &:hover {
-          background-color: #fef2f2;
+        padding: 1rem 1.5rem;
+        text-align: left;
+        font-size: 1.6rem;
+        line-height: 2rem;
+        font-weight: 600;
+        color: $white;
+        &:not(:last-child) {
+          border-bottom: 1px solid $red;
         }
-
         td {
           padding: 1rem 1.5rem;
           white-space: nowrap;
-          color: #1f2937;
+          font-size: 1.6rem;
+        line-height: 2rem;
+        font-weight: 400;
+        color: $white;
+        background-color: transparent;
+        text-transform: capitalize;
+        
         }
       }
     }
