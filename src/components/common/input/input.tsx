@@ -11,6 +11,7 @@ interface InputProps {
   id?: string;
   error?: string;
   maxLength?: number;
+  disabled?: boolean;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -24,6 +25,7 @@ const Input: React.FC<InputProps> = ({
   name,
   error,
   maxLength,
+  disabled,
 }) => {
   const handleWheel = (event: WheelEvent<HTMLInputElement>) => {
     if (type === "number") {
@@ -66,6 +68,7 @@ const Input: React.FC<InputProps> = ({
         onWheel={handleWheel}
         onKeyDown={handleKeyDown}
         maxLength={type !== "number" ? maxLength : undefined} // only apply if not number
+        disabled={disabled}
       />
       {error && <span className="error_message">{error}</span>}
     </div>

@@ -14,13 +14,15 @@ import {
 import storage from "./customStorage";
 import { apiSlice } from "./slices/api/apiSlice";
 import authReducer from "./slices/auth/authSlice";
+import userReducer from "./slices/user/userSlice";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["auth"],
+  whitelist: ["auth", "user"],
 };
 const rootReducer = combineReducers({
   auth: authReducer,
+  user: userReducer,
   [apiSlice.reducerPath]: apiSlice.reducer,
 });
 

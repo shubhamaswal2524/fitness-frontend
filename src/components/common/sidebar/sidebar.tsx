@@ -5,10 +5,12 @@ import logo from "../../../../public/assets/mainlogo.png";
 import Button from "../button/button";
 import { logout } from "@/lib/slices/auth/authSlice";
 import { useDispatch } from "react-redux";
-import { NavLink } from "react-bootstrap";
+import { usePathname } from "next/navigation";
+import { setSidebarTabs } from "@/lib/slices/user/userSlice";
 
 const Sidebar = ({ show }: any) => {
   const dispatch = useDispatch();
+  const pathname = usePathname();
   const handleLogout = async (e: any) => {
     try {
       e.preventDefault();
@@ -21,6 +23,12 @@ const Sidebar = ({ show }: any) => {
       console.error("Logout failed", error);
     }
   };
+
+  const navLinks = [
+    { href: "dashboard", label: "Dashboard" },
+    { href: "personal-information", label: "Personal Information" },
+    { href: "workout-lists", label: "Workout Lists" },
+  ];
   return (
     <>
       <div className={`sidebar ${show ? "active" : ""}`}>
@@ -29,26 +37,19 @@ const Sidebar = ({ show }: any) => {
         </div>
         <div className="sidebar_in">
           <ul>
-            <li>
-              <Link href="/dashboard" className="main_heading active ">
-                Dasboard
-              </Link>
-            </li>
-            <li>
-              <Link href="/personal-information" className="main_heading">
-                Presonal informaton
-              </Link>
-            </li>
-            <li>
-              <Link href="/workout-lists" className="main_heading">
-                Workout Lists
-              </Link>
-            </li>
-            <li>
-              <Link href="/" className="main_heading">
-                Home
-              </Link>
-            </li>
+            {navLinks?.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={`/${link.href}`}
+                  className={`main_heading ${
+                    pathname === link.href ? "active" : ""
+                  }`}
+                  onClick={() => dispatch(setSidebarTabs(link?.href))}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
           <Button
             onClick={(e: any) => {
