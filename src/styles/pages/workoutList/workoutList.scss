@@ -1,0 +1,93 @@
+@use "../../../../public/assets/_var.scss" as *;
+.workout_list {
+    padding: 12.4rem 0rem 10rem 0rem;
+    width: 100%;
+    @media (max-width:991px) {
+        padding: 9.4rem 0rem 5rem;
+        
+    }
+    @media (max-width:767px) {
+        padding: 7rem 0rem 5rem;
+        
+    }
+    .row{
+        margin: -1.5rem;
+        >div{
+            padding: 1.5rem;
+        }
+    }
+    .workout_filter{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0rem ;
+        h2{
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 2.8rem;
+            text-transform: uppercase;
+            font-family: "rajdhani", sans-serif;
+            color: $white;
+            span{
+                color: $red;    
+
+            }
+            @media (max-width:767px) {
+                font-size: 2rem;
+        }
+    }
+    }
+    .custum_pagination
+    {
+        padding: 1.5rem 0rem;
+        text-align: end;
+        ul{
+            display: flex;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            li{
+                a{
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    line-height: 2rem;
+                    padding: 0.5rem 1rem ;
+                    display: flex;
+                    align-items: center;
+                    border-radius: 0.8rem;
+                    svg{
+                        width: 2rem;
+                        height: 2rem;
+                        path{
+                            stroke: $red;
+                        }
+                    }
+                    &.prev{
+                        border-right: 0.1rem solid $red;
+                        svg{
+                            margin-right: 1rem;
+                        }
+                    }
+                    &.next{
+                        border-left: 0.1rem solid $red;
+                        svg{
+                            margin-left: 1rem;
+                        }
+                    }
+                    &.active,
+                    &:hover{
+                        background: $red;
+                        color: $white;
+                        svg{
+                           path{
+                            stroke: $white;
+                           }
+                        }
+                    }
+                }
+                &:not(:last-child){
+                    margin-right: 1rem;}
+            }
+        }
+    }
+}

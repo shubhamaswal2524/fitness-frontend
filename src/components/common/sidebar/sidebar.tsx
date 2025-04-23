@@ -30,24 +30,24 @@ const Sidebar = ({ show }: any) => {
         <div className="sidebar_in">
           <ul>
             <li>
-              <NavLink href="/dashboard" className="main_heading active ">
+              <Link href="/dashboard" className="main_heading active ">
                 Dasboard
-              </NavLink>
+              </Link>
             </li>
             <li>
-              <NavLink href="/personal-information" className="main_heading">
+              <Link href="/personal-information" className="main_heading">
                 Presonal informaton
-              </NavLink>
+              </Link>
             </li>
             <li>
-              <NavLink href="/" className="main_heading">
-                Home
-              </NavLink>
+              <Link href="/workout-lists" className="main_heading">
+                Workout Lists
+              </Link>
             </li>
             <li>
-              <NavLink href="/" className="main_heading">
+              <Link href="/" className="main_heading">
                 Home
-              </NavLink>
+              </Link>
             </li>
           </ul>
           <Button

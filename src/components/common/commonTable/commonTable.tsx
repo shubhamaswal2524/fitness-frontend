@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 import { Table } from 'react-bootstrap';
-import './CommonTable.scss';
 
 const CommonTable = ({
   className = '',
@@ -15,7 +14,8 @@ const CommonTable = ({
 }) => {
  
   return (
-    <Table responsive className={`commonTable ${className}`}>
+    <div className={`common_table ${className}`}>
+    <Table responsive>
         <thead>
           <tr>
             {fields?.map((item: any) => (
@@ -45,6 +45,7 @@ const CommonTable = ({
         )}
       </tbody>
     </Table>
+                  </div>
   );
 };
 
