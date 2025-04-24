@@ -73,6 +73,9 @@ const Header = () => {
             <li>
               <Link href="/contact-us">Contact Us</Link>
             </li>
+            <li>
+              <Link href="/shred-x">Shred-x</Link>
+            </li>
           </ul>
           <div className="action">
             <Button

@@ -104,7 +104,7 @@ const PersonalInfo = () => {
             <h1 className="big_heading ">personal information</h1>
             <form onSubmit={formik.handleSubmit}>
               <Row>
-                <Col xs={12} md={6} lg={6}>
+                <Col xs={12} md={6} lg={6} sm={6}>
                   {" "}
                   <div className="field_in">
                     <Input
@@ -120,7 +120,7 @@ const PersonalInfo = () => {
                     />
                   </div>
                 </Col>
-                <Col xs={12} md={6} lg={6}>
+                <Col xs={12} md={6} lg={6} sm={6}>
                   {" "}
                   <div className="field_in">
                     <Input
@@ -137,7 +137,7 @@ const PersonalInfo = () => {
                     />
                   </div>
                 </Col>
-                <Col xs={12} md={6} lg={6}>
+                <Col xs={12} md={6} lg={6} sm={6}>
                   {" "}
                   <div className="field_in">
                     <Input
@@ -153,7 +153,7 @@ const PersonalInfo = () => {
                     />
                   </div>
                 </Col>
-                <Col xs={12} md={6} lg={6}>
+                <Col xs={12} md={6} lg={6} sm={6}>
                   {" "}
                   <div className="field_in">
                     <Input
@@ -169,7 +169,7 @@ const PersonalInfo = () => {
                     />
                   </div>
                 </Col>
-                <Col xs={12} md={6} lg={6}>
+                <Col xs={12} md={6} lg={6} sm={6}>
                   {" "}
                   <div className="field_in">
                     <Input
@@ -185,7 +185,7 @@ const PersonalInfo = () => {
                     />
                   </div>
                 </Col>
-                <Col xs={12} md={6}>
+                <Col xs={12} md={6} lg={6} sm={6}>
                   <div className="field_in">
                     <Input
                       label="Height"
@@ -200,7 +200,7 @@ const PersonalInfo = () => {
                     />
                   </div>
                 </Col>
-                <Col xs={12} md={6} lg={6}>
+                <Col xs={12} md={6} lg={6} sm={6}>
                   {" "}
                   <div className="field_in">
                     <Input
@@ -238,7 +238,7 @@ const PersonalInfo = () => {
                     />
                   </div>
                 </Col>
-                <Col xs={12} md={6} lg={6}>
+                <Col xs={12} md={6} lg={6} sm={6}>
                   {" "}
                   <div className="field_in">
                     <Uploadbox
@@ -249,7 +249,7 @@ const PersonalInfo = () => {
                     />
                   </div>
                 </Col>
-                <Col xs={12} md={6} lg={6}>
+                <Col xs={12} md={6} lg={6} sm={6}>
                   {" "}
                   <div className="field_in">
                     <Uploadbox
