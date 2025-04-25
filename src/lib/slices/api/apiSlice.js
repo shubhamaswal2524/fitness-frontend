@@ -4,19 +4,21 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const baseQuery = fetchBaseQuery({
   baseUrl: "http://localhost:8000/api/v1",
 
-  prepareHeaders: (headers, { getState, endpoint }) => {
-    const UPLOAD_ENDPOINTS = ["addProperty", "updateUser"];
+  prepareHeaders: (headers, { getState, endpoint, body }) => {
+    const UPLOAD_ENDPOINTS = ["update-profile"];
 
     const token = getState()?.auth?.token;
     if (token) {
+      // if (auth.token) {
       headers.set("authorization", `Bearer ${token}`);
+      // headers.set("authorization", auth.token);
     }
 
     if (!UPLOAD_ENDPOINTS.includes(endpoint)) {
       headers.set("content-type", "application/json");
       headers.set("ngrok-skip-browser-warning", "69420");
     }
-    return headers;
+    return headers; // ✅ Always return headers
   },
 });
 

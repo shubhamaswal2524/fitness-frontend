@@ -44,7 +44,6 @@ const Login = () => {
         // const response: any = await apiHelper.post("/create", values);
         const response = await login(values).unwrap();
         console.log("response", response);
-        return;
         if (response?.status == 200 || response?.status == 201) {
           router.push("/dashboard");
           resetForm();
