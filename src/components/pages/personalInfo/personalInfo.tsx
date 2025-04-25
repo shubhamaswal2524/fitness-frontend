@@ -8,7 +8,10 @@ import { useFormik } from "formik";
 import { useRouter } from "next/navigation";
 import { Col, Container, Row } from "react-bootstrap";
 import * as Yup from "yup";
-import { useUpdateProfileMutation } from "@/lib/slices/user/userApiSlice";
+import { useGetProfileQuery } from "@/lib/slices/user/userApiSlice";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setUserProfile } from "@/lib/slices/user/userSlice";
 
 interface FormValues {
   name: string;
@@ -21,26 +24,30 @@ interface FormValues {
   profilePicture: string;
   physiquePicture: string;
   email: string;
-  password: string;
 }
 
 const PersonalInfo = () => {
   const router = useRouter();
-  const [updateProfile] = useUpdateProfileMutation();
+  const dispatch = useDispatch();
+
+  const { data: profileData, isSuccess, refetch } = useGetProfileQuery({});
+
+  console.log("profileData", profileData);
+
   const formik = useFormik<FormValues>({
     initialValues: {
-      name: "",
-      age: "",
-      gender: "",
-      weight: "",
-      height: "",
-      location: "",
-      description: "",
-      profilePicture: "",
-      physiquePicture: "",
-      email: "",
-      password: "",
+      name: profileData?.data?.name || "",
+      age: profileData?.data?.age || "",
+      gender: profileData?.data?.gender || "",
+      weight: profileData?.data?.weight || "",
+      height: profileData?.data?.height || "",
+      location: profileData?.data?.address || "",
+      description: profileData?.data?.fitnessGoal || "",
+      profilePicture: profileData?.data?.profilePicture || "",
+      physiquePicture: profileData?.data?.physiquePicture || "",
+      email: profileData?.data?.email || "",
     },
+    enableReinitialize: true,
     validationSchema: Yup.object({
       name: Yup.string().required("Name is required"),
       age: Yup.number()
@@ -72,29 +79,56 @@ const PersonalInfo = () => {
             /^[1-9]\d{9}$/.test(value || "")
         )
         .required("Email or mobile number is required"),
-      password: Yup.string()
-        .min(6, "Password must be at least 6 characters")
-        .required("Password is required"),
     }),
 
     onSubmit: async (values, { setSubmitting, resetForm }) => {
       try {
-        const response: any = await updateProfile(values).unwrap();
+        const formData = new FormData();
 
+        formData.append("name", values.name);
+        formData.append("age", values.age.toString());
+        formData.append("gender", values.gender);
+        formData.append("weight", values.weight.toString());
+        formData.append("height", values.height.toString());
+        formData.append("address", values.location);
+        formData.append("fitnessGoal", values.description);
+        formData.append("email", values.email);
+
+        if (values.profilePicture && typeof values.profilePicture != "string") {
+          formData.append("profilePicture", values.profilePicture);
+        }
+        if (
+          values.physiquePicture &&
+          typeof values.physiquePicture != "string"
+        ) {
+          formData.append("physiquePicture", values.physiquePicture);
+        }
+        console.log("formData", formData);
+        console.log("Sending formData:", formData instanceof FormData); // Should be true
+
+        const response: any = await apiHelper.patch(
+          "/update-profile",
+          formData
+        ); // adapt this if needed
+        console.log("rejhvuyigusponse", response);
         if (response?.status == 200 || response?.status == 201) {
+          refetch();
           router.push("/dashboard");
           resetForm();
         }
-
-        console.log("response", response);
-        // resetForm();
       } catch (error) {
-        console.log("errdwewor", error);
+        console.log("Upload error", error);
       } finally {
         setSubmitting(false);
       }
     },
   });
+
+  useEffect(() => {
+    if (isSuccess && profileData) {
+      dispatch(setUserProfile(profileData?.data)); // ✅ Set profile in store
+    }
+  }, [isSuccess, profileData, dispatch]);
 
   return (
     <>
@@ -133,7 +167,7 @@ const PersonalInfo = () => {
                       onBlur={formik.handleBlur}
                       value={formik.values.email}
                       error={formik.touched.email ? formik.errors.email : ""}
-                      disabled
+                      // disabled
                     />
                   </div>
                 </Col>
@@ -142,14 +176,14 @@ const PersonalInfo = () => {
                   <div className="field_in">
                     <Input
                       label="Age "
-                      id="Age"
-                      name="Age"
+                      id="age"
+                      name="age"
                       type="text"
                       placeholder="Enter Your Age "
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      value={formik.values.email}
-                      error={formik.touched.email ? formik.errors.email : ""}
+                      value={formik.values.age}
+                      error={formik.touched.age ? formik.errors.age : ""}
                     />
                   </div>
                 </Col>
@@ -242,8 +276,9 @@ const PersonalInfo = () => {
                   {" "}
                   <div className="field_in">
                     <Uploadbox
+                      image={formik.values.profilePicture}
                       label="Update Your Profile Picture"
-                      onChange={(value: string) =>
+                      onChange={(value: any) =>
                         formik.setFieldValue("profilePicture", value)
                       }
                     />
@@ -253,17 +288,20 @@ const PersonalInfo = () => {
                   {" "}
                   <div className="field_in">
                     <Uploadbox
+                      image={formik.values.physiquePicture}
                       label="Update Your physic Picture"
-                      onChange={(value: string) =>
+                      onChange={(value: any) =>
                         formik.setFieldValue("physiquePicture", value)
                       }
                     />
                   </div>
                 </Col>
               </Row>
-              <div className="action">
-                <Button type="submit">Submit</Button>
-              </div>
+              {formik?.dirty ? (
+                <div className="action">
+                  <Button type="submit">Submit</Button>
+                </div>
+              ) : null}
             </form>
           </div>
         </Container>

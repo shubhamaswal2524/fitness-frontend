@@ -22,14 +22,18 @@ export const userApiSlice = apiSlice.injectEndpoints({
     }),
 
     updateProfile: builder.mutation({
-      query: (body) => ({
-        url: "/user/updateProfile",
+      query: (formData) => ({
+        url: "/update-profile", // Your API endpoint for updating the profile
         method: "PATCH",
-        body,
+        body: formData,
         formData: true,
       }),
-      tagsTypes: ["updateProfile"],
       invalidatesTags: ["updateProfile"],
+    }),
+
+    getProfile: builder.query({
+      query: () => `/user/get-profile`,
+      tagsTypes: ["get-profile"],
     }),
   }),
 });
@@ -38,4 +42,5 @@ export const {
   useLoginMutation,
   useRegisterMutation,
   useUpdateProfileMutation,
+  useGetProfileQuery,
 } = userApiSlice;

@@ -7,8 +7,11 @@ import DailyTask from "@/components/common/dailytask/dailytask";
 import DeitPlan from "@/components/common/deitPlan/deitPlan";
 import PerformanceCard from "@/components/common/performanceCard/performanceCard";
 import ActivitiesBox from "../activitiesBox/activitiesBox";
+import { useSelector } from "react-redux";
 
 const Dashboard = () => {
+  const { profile } = useSelector((state: any) => state.user);
+
   const workouts = [
     {
       workoutName: "Chest Day",
@@ -71,7 +74,7 @@ const Dashboard = () => {
             </Col>
             <Col lg={3} md={6} sm={6}>
               <ProfileCard
-                profile={demo}
+                profile={profile}
                 name="jashan"
                 weight="50 kg"
                 location="mohali"

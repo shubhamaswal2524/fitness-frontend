@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useAppSelector } from "@/lib/store";
 import { ReactNode } from "react";
 import Userlayout from "@/components/layout/userlayout";
+import IdleTimer from "@/utils/IdleTimer";
 
 const AuthLayout = ({ children }: { children: ReactNode }) => {
   const { token } = useAppSelector((state) => state.auth);
@@ -21,7 +22,12 @@ const AuthLayout = ({ children }: { children: ReactNode }) => {
 
   // if (checkingAuth) return null; // Don't flash layout during redirect
 
-  return <Userlayout>{children}</Userlayout>;
+  return (
+    <>
+      <IdleTimer />
+      <Userlayout>{children}</Userlayout>
+    </>
+  );
 };
 
 export default AuthLayout;
