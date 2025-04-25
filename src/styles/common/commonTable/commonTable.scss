@@ -1,5 +1,5 @@
-
 @use "../../../../public/assets/_var.scss" as *;
+
 .common_table {
   width: 100%;
   overflow-x: auto;
@@ -13,7 +13,7 @@
 
     thead {
       color: $white;
-      
+
       th {
         background: $red;
         padding: 1rem 1.5rem;
@@ -24,12 +24,12 @@
         color: $white;
         text-transform: capitalize;
         border: none;
-        &:first-child
-        {
+
+        &:first-child {
           border-top-left-radius: 1.2rem;
         }
-        &:last-child
-        {
+
+        &:last-child {
           border-top-right-radius: 1.2rem;
         }
       }
@@ -46,19 +46,32 @@
         line-height: 2rem;
         font-weight: 600;
         color: $white;
+
         &:not(:last-child) {
           border-bottom: 1px solid $red;
         }
+
         td {
           padding: 1rem 1.5rem;
           white-space: nowrap;
           font-size: 1.6rem;
-        line-height: 2rem;
-        font-weight: 400;
-        color: $white;
-        background-color: transparent;
-        text-transform: capitalize;
-        
+          line-height: 2rem;
+          font-weight: 400;
+          color: $white;
+          background-color: transparent;
+          text-transform: capitalize;
+
+          &.in progress {
+            color: $yellow;
+          }
+
+          &.todo {
+            color: $blue;
+          }
+
+          &.cancelled {
+            color: $red;
+          }
         }
       }
     }
