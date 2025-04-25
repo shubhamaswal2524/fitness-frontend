@@ -22,7 +22,7 @@
   .batch_badge {
     content: "";
     position: absolute;
-    top: 1.5rem;
+    top: 5.4rem;
     right: 0;
     font-size: 2rem;
     font-family: rajdhani;
@@ -32,12 +32,14 @@
     color: $white;
     text-transform: uppercase;
     background: $red;
-    border-radius: .8rem 0 0 .8rem;
+    border-radius:0rem  .8rem .8rem 0rem;
     padding: .5rem;
-    width: 6.6rem;
+    width: 15.5rem;
+    height: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: rotate(90deg);
 }
   p {
     font-size: 1.8rem;

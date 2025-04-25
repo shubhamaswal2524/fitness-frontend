@@ -28,12 +28,14 @@ const Sidebar = ({ show }: any) => {
     { href: "dashboard", label: "Dashboard" },
     { href: "personal-information", label: "Personal Information" },
     { href: "workout-lists", label: "Workout Lists" },
+    { href: "daily-diet", label: "Daily Diet" },
   ];
   return (
     <>
       <div className={`sidebar ${show ? "active" : ""}`}>
         <div className="logo">
-          <Image src={logo} alt="logo" />
+         <Link href="/">
+          <Image src={logo} alt="" /> </Link>
         </div>
         <div className="sidebar_in">
           <ul>
