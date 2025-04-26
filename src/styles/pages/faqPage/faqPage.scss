@@ -1,0 +1,59 @@
+@use "../../../../public/assets/_var.scss" as *;
+.faq_page {
+  padding: 3rem 0rem;
+  @media (max-width: 767px) {
+    padding: 2rem 0rem;
+  }
+  .faq_accordion {
+    .accordion-item {
+      background: transparent;
+      color: $white;
+      border: none;
+      border-radius: 1.2rem;
+
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+
+      .accordion-header {
+        button {
+          background: $red;
+          font-size: 2rem;
+          font-weight: 500;
+          line-height: 2.4rem;
+          border: none;
+          box-shadow: none;
+          border-radius: 1.2rem;
+          min-height: 5rem;
+          color: $white;
+          @media (max-width: 767px) {
+            font-size: 1.6rem;
+            line-height: 2rem;
+            min-height: 4rem;
+          }
+
+          &.collapsed {
+            border-radius: 1.2rem;
+          }
+
+          &::after {
+            background-image: url("../../../../assets/images/icon/arrow.svg");
+            width: 2rem;
+            height: 2rem;
+            background-size: 2rem;
+          }
+        }
+      }
+
+      .accordion-body {
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 2.8rem;
+        @media (max-width: 767px) {
+          font-size: 1.6rem;
+          line-height: 2rem;
+        }
+      }
+    }
+  }
+}
