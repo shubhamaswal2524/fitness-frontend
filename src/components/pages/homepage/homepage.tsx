@@ -11,7 +11,7 @@ const Homepage = () => {
     <div className="homepage_design">
       <Hero />
       <MarqueeBar />
-      <BmiPage />
+      {/* <BmiPage /> */}
       <Price/>
       <AboutPage/>
       <Videopage/>
