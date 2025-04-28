@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Col, Container, Row } from "react-bootstrap";
 import championImg from "../../../../public/assets/champion.png";
 import { TimeIcon } from "../../../../public/assets/icons";
+import FaqPage from "../faqPage/faqPage";
 
 const ShredCode = () => {
   return (
@@ -73,6 +74,9 @@ const ShredCode = () => {
               </div>
               <p>We offer a wide range of fitness services and programs to cater to different fitness levels, interests, and goals. Whether you're looking for personal training, group fitness classes, specialized workouts, or nutritional guidance, we have options to suit your needs.
 </p>
+            <div className="faq_box">
+              <FaqPage/>
+            </div>
             </div>
             <div className="inner_right">
               <div className="working_hours">
