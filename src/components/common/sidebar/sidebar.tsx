@@ -29,6 +29,7 @@ const Sidebar = ({ show }: any) => {
     { href: "personal-information", label: "Personal Information" },
     { href: "workout-lists", label: "Workout Lists" },
     { href: "daily-diet", label: "Daily Diet" },
+    { href: "notifications", label: "Notifications" },
   ];
   return (
     <>
