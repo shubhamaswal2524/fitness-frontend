@@ -62,7 +62,7 @@ const NotificationPage = () => {
                     <button>
                       <StarIcon />
                     </button>
-                    gyms play a vital role in promoting an active and healthy{" "}
+                   <p>gyms play a vital role in promoting an active and healthy{" "}</p>
                     <span>just now</span>
                   </Link>
                   <button className="trash_btn">
@@ -74,7 +74,7 @@ const NotificationPage = () => {
                     <button>
                       <FillStarIcon />
                     </button>
-                    gyms play a vital role in promoting an active and healthy{" "}
+                    <p>gyms play a vital role in promoting an active and healthy{" "}</p>
                     <span>just now</span>
                   </Link>
                   <button className="trash_btn">

@@ -9,6 +9,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (max-width:575px) {
+      flex-direction: column;
+      align-items: flex-start;
+      flex-direction: flex-start;
+    }
 
     h1 {
       margin-right: 2rem;
@@ -20,12 +25,28 @@
       font-family: "rajdhani", sans-serif;
       display: flex;
       align-items: center;
+      @media (max-width:767px) {
+        font-size: 2.4rem;
+        line-height: 2.8rem;
+        
+      }
+      @media (max-width:575px) {
+        font-size: 2.2rem;
+        line-height: 2.4rem;
+        
+      }
     }
 
     .commonSearch {
       max-width: 30rem;
       width: 100%;
       flex-shrink: 0;
+
+      @media (max-width:575px) {
+        max-width: 100%;
+        margin-top: 1rem;
+        
+      }
     }
   }
 
@@ -116,9 +137,12 @@
           }
 
           a {
-            font-size: 1.4rem;
+            p{
+              font-size: 1.4rem;
             padding: 1.5rem 0rem;
             width: 100%;
+            line-height: 2rem;
+            }
           
            button{
             background: transparent;
