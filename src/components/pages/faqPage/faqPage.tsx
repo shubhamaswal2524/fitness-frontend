@@ -4,7 +4,7 @@ import { Accordion } from "react-bootstrap";
 const FaqPage = () => {
   return (
     <>
-      <div className="faqgit _page">
+      <div className="faq_page">
         <Accordion defaultActiveKey={["0"]} className="faq_accordion">
           <Accordion.Item eventKey="0">
             <Accordion.Header>Accordion Item #1</Accordion.Header>

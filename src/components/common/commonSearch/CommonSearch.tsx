@@ -1,8 +1,5 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import './CommonSearch.scss';
+import { SearchIcon } from "../../../../public/assets/icons";
 
-// @ts-ignore
-import { debounce } from 'lodash';
 
 type CommonSearchProps = {
   label?: string;
@@ -19,27 +16,27 @@ const CommonSearch: React.FC<CommonSearchProps> = ({
   className,
   searchFunction,
 }: any) => {
-  const [searchTerm, setSearchTerm] = useState<string>('');
+  // const [searchTerm, setSearchTerm] = useState<string>('');
 
-  const debouncedSearchFunction = useCallback(
-    debounce((term: string) => {
-      if (term.length > 2) {
-        searchFunction(term.includes('@') ? { email: term } : { name: term });
-      } else {
-        searchFunction({});
-      }
-    }, 500), // Adjust the debounce delay as needed
-    [searchFunction],
-  );
+  // const debouncedSearchFunction = useCallback(
+  //   debounce((term: string) => {
+  //     if (term.length > 2) {
+  //       searchFunction(term.includes('@') ? { email: term } : { name: term });
+  //     } else {
+  //       searchFunction({});
+  //     }
+  //   }, 500), // Adjust the debounce delay as needed
+  //   [searchFunction],
+  // );
 
-  useEffect(() => {
-    debouncedSearchFunction(searchTerm);
+  // useEffect(() => {
+  //   debouncedSearchFunction(searchTerm);
 
-    // Cleanup function to cancel the debounce on unmount
-    return () => {
-      debouncedSearchFunction.cancel();
-    };
-  }, [searchTerm]);
+  //   // Cleanup function to cancel the debounce on unmount
+  //   return () => {
+  //     debouncedSearchFunction.cancel();
+  //   };
+  // }, [searchTerm]);
 
   return (
     <>
@@ -47,15 +44,15 @@ const CommonSearch: React.FC<CommonSearchProps> = ({
         {label && <label className="searhLabel">{label}</label>}
         <div className="searchInput">
           <span className="searchIcon">
-            {/* <SearchIcon /> */}
+            <SearchIcon />
           </span>
           <input
-            onChange={(e: any) => {
-              e.target.value === ''
-                ? setSearchTerm('')
-                : setSearchTerm(e.target.value);
-            }}
-            value={searchTerm}
+            // onChange={(e: any) => {
+            //   e.target.value === ''
+            //     ? setSearchTerm('')
+            //     : setSearchTerm(e.target.value);
+            // }}
+            // value={searchTerm}
             type="text"
             className=""
             id="searchbox"
