@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "../button/button";
+import { useRouter } from "next/navigation";
 
 interface ProfileCardProps {
   // title: string;
@@ -18,6 +19,7 @@ const ProfileCard = ({
   weight,
   location,
 }: ProfileCardProps) => {
+  const router = useRouter();
   return (
     <>
       <div className="profile_card">
@@ -54,7 +56,12 @@ const ProfileCard = ({
               <h5>{profile?.address || ""}</h5>
             </li>
           </ul>
-          <Button className="w-100 mt-4">Edit Profile</Button>
+          <Button
+            className="w-100 mt-4"
+            onClick={() => router.push("/personal-information")}
+          >
+            Edit Profile
+          </Button>
         </div>
       </div>
     </>

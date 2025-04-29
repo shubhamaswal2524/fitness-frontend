@@ -10,7 +10,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import * as Yup from "yup";
 import { useGetProfileQuery } from "@/lib/slices/user/userApiSlice";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setUserProfile } from "@/lib/slices/user/userSlice";
 
 interface FormValues {
@@ -29,23 +29,26 @@ interface FormValues {
 const PersonalInfo = () => {
   const router = useRouter();
   const dispatch = useDispatch();
+  const { sidebarTab, profile: profileData } = useSelector(
+    (state: any) => state.user
+  );
 
-  const { data: profileData, isSuccess, refetch } = useGetProfileQuery({});
+  // const { data: profileData, isSuccess, refetch } = useGetProfileQuery({});
 
   console.log("profileData", profileData);
 
   const formik = useFormik<FormValues>({
     initialValues: {
-      name: profileData?.data?.name || "",
-      age: profileData?.data?.age || "",
-      gender: profileData?.data?.gender || "",
-      weight: profileData?.data?.weight || "",
-      height: profileData?.data?.height || "",
-      location: profileData?.data?.address || "",
-      description: profileData?.data?.fitnessGoal || "",
-      profilePicture: profileData?.data?.profilePicture || "",
-      physiquePicture: profileData?.data?.physiquePicture || "",
-      email: profileData?.data?.email || "",
+      name: profileData?.name || "",
+      age: profileData?.age || "",
+      gender: profileData?.gender || "",
+      weight: profileData?.weight || "",
+      height: profileData?.height || "",
+      location: profileData?.address || "",
+      description: profileData?.fitnessGoal || "",
+      profilePicture: profileData?.profilePicture || "",
+      physiquePicture: profileData?.physiquePicture || "",
+      email: profileData?.email || "",
     },
     enableReinitialize: true,
     validationSchema: Yup.object({
@@ -112,7 +115,7 @@ const PersonalInfo = () => {
         ); // adapt this if needed
         console.log("rejhvuyigusponse", response);
         if (response?.status == 200 || response?.status == 201) {
-          refetch();
+          // refetch();
           router.push("/dashboard");
           resetForm();
         }
@@ -124,11 +127,11 @@ const PersonalInfo = () => {
     },
   });
 
-  useEffect(() => {
-    if (isSuccess && profileData) {
-      dispatch(setUserProfile(profileData?.data)); // ✅ Set profile in store
-    }
-  }, [isSuccess, profileData, dispatch]);
+  // useEffect(() => {
+  //   if (isSuccess && profileData) {
+  //     dispatch(setUserProfile(profileData?.data)); // ✅ Set profile in store
+  //   }
+  // }, [isSuccess, profileData, dispatch]);
 
   return (
     <>
