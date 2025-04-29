@@ -12,6 +12,7 @@
     "@reduxjs/toolkit": "^2.6.1",
     "bootstrap": "^5.3.3",
     "formik": "^2.4.6",
+    "gsap": "^3.12.7",
     "next": "^15.2.2",
     "nookies": "^2.5.2",
     "react": "^19.0.0",

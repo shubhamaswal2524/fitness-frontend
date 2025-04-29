@@ -24,7 +24,6 @@ const NotificationPage = () => {
             <Nav.Item>
               <Nav.Link eventKey="Achive">Achive</Nav.Link>
             </Nav.Item>
-           
           </Nav>
           <Tab.Content>
             <Tab.Pane eventKey="all">
@@ -56,13 +55,13 @@ const NotificationPage = () => {
               </ul>
             </Tab.Pane>
             <Tab.Pane eventKey="Achive">
-            <ul>
+              <ul>
                 <li className="active">
                   <Link href={"/"}>
                     <button>
                       <StarIcon />
                     </button>
-                   <p>gyms play a vital role in promoting an active and healthy{" "}</p>
+                      gyms play a vital role in promoting an active and healthy{" "}
                     <span>just now</span>
                   </Link>
                   <button className="trash_btn">
@@ -74,7 +73,7 @@ const NotificationPage = () => {
                     <button>
                       <FillStarIcon />
                     </button>
-                    <p>gyms play a vital role in promoting an active and healthy{" "}</p>
+                      gyms play a vital role in promoting an active and healthy{" "}
                     <span>just now</span>
                   </Link>
                   <button className="trash_btn">
@@ -83,7 +82,6 @@ const NotificationPage = () => {
                 </li>
               </ul>
             </Tab.Pane>
-           
           </Tab.Content>
         </Tab.Container>
       </div>
