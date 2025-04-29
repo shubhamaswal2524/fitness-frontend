@@ -11,6 +11,9 @@ export default function Wrapper({ children }: { children: React.ReactNode }) {
     <>
       {pathname.startsWith("/dashboard") ||
       pathname.startsWith("/personal-information") ||
+      pathname.startsWith("/daily-diet") ||
+      pathname.startsWith("/notifications") ||
+      pathname.startsWith("/personal-information") ||
       pathname.startsWith("/workout-lists") ? (
         <AuthLayout>{children}</AuthLayout>
       ) : (
