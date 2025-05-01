@@ -11,6 +11,13 @@ export const userApiSlice = apiSlice.injectEndpoints({
       invalidatesTags: ["login"],
       tagTypes: ["googleAuthLogin"],
     }),
+    contactUs: builder.mutation({
+      query: (body) => ({
+        url: "/user/contactUs",
+        method: "POST",
+        body,
+      }),
+    }),
 
     register: builder.mutation({
       query: (body) => ({
@@ -40,6 +47,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
 
 export const {
   useLoginMutation,
+  useContactUsMutation,
   useRegisterMutation,
   useUpdateProfileMutation,
   useGetProfileQuery,

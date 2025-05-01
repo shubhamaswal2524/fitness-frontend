@@ -1,10 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Col, Container, Row } from "react-bootstrap";
-import { BallIcon, ContactIcon, FBIcon, InstaIcon, MsgIcon, RightArrow } from "../../../../public/assets/icons";
+import {
+  BallIcon,
+  ContactIcon,
+  FBIcon,
+  InstaIcon,
+  MsgIcon,
+  RightArrow,
+} from "../../../../public/assets/icons";
 import logo from "../../../../public/assets/mainlogo.png";
+import { useContactUsMutation } from "@/lib/slices/user/userApiSlice";
+import { useState } from "react";
 
 const Footer = () => {
+  const [email, setEmail] = useState<string>("");
+  const [contactUs] = useContactUsMutation();
+
+  const contactUsFunction = async () => {
+    const response = await contactUs({ email }).unwrap();
+    console.log("response", response);
+    if (response?.status == 200 || response?.status == 201) {
+      alert(response.message || "");
+      setEmail("");
+    }
+  };
   return (
     <>
       <section className="footer">
@@ -20,8 +40,19 @@ const Footer = () => {
                     Push harder, go further. Your fitness journey starts today!
                   </p>
                   <div className="box_input">
-                    <input type="text" placeholder="Enter Email" />
-                    <button className="input_btn"><RightArrow/></button>
+                    <input
+                      type="text"
+                      placeholder="Enter Email"
+                      onChange={(e) => setEmail(e.target.value)}
+                      value={email}
+                      maxLength={50}
+                    />
+                    <button
+                      className="input_btn"
+                      onClick={() => contactUsFunction()}
+                    >
+                      <RightArrow />
+                    </button>
                   </div>
                 </div>
               </Col>
@@ -31,12 +62,17 @@ const Footer = () => {
                     <h3>contact us</h3>
                     <ul>
                       <li>
-                        <Link href={""}><ContactIcon/>+91 123 456 789</Link>{" "}
+                        <Link href={""}>
+                          <ContactIcon />
+                          +91 123 456 789
+                        </Link>{" "}
                       </li>
                       <li>
-                        <Link href={""}><MsgIcon/>info@arshsandhu.com</Link>{" "}
+                        <Link href={""}>
+                          <MsgIcon />
+                          info@arshsandhu.com
+                        </Link>{" "}
                       </li>
-                     
                     </ul>
                   </div>
                   <div className="inner_box">
@@ -46,7 +82,9 @@ const Footer = () => {
                         <Link href={""}>Wave Estate Mohali</Link>{" "}
                       </li>
                       <li>
-                        <Link href={""}>Sector 85, Sahibzada Ajit Singh Nagar</Link>{" "}
+                        <Link href={""}>
+                          Sector 85, Sahibzada Ajit Singh Nagar
+                        </Link>{" "}
                       </li>
                       <li>
                         <Link href={""}>Punjab (140308) In</Link>{" "}
