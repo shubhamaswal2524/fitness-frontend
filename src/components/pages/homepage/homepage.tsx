@@ -6,6 +6,7 @@ import Videopage from "../videopage/videopage";
 import Hero from "./hero/hero";
 import Consultancy from "../consultancy/consultancy";
 import BlogList from "../blogList/blogList";
+import GetYourPlanToday from "../getYourPlanToday/getYourPlanToday";
 const Homepage = () => {
   return (
     <div className="homepage_design">
@@ -17,6 +18,7 @@ const Homepage = () => {
       <Videopage/>
       <Consultancy/>
       <BlogList/>
+      <GetYourPlanToday/>
     </div>
   );
 };
