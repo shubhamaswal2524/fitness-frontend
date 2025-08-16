@@ -121,18 +121,7 @@
       }
 
       li {
-        &:not(:last-child) {
-          margin-right: 6rem;
 
-          @media (max-width:767px) {
-            margin-right: 3rem;
-          }
-
-          @media (max-width:599px) {
-            margin-right: 0;
-            margin-bottom: 1rem;
-          }
-        }
 
         display: flex;
         align-items: center;
@@ -156,6 +145,19 @@
 
         @media (max-width:499px) {
           width: 100%;
+        }
+
+        &:not(:last-child) {
+          margin-right: 6rem;
+
+          @media (max-width:767px) {
+            margin-right: 3rem;
+          }
+
+          @media (max-width:599px) {
+            margin-right: 0;
+            margin-bottom: 1rem;
+          }
         }
 
         svg {

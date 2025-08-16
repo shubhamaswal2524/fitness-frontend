@@ -3,6 +3,7 @@ import { usePathname } from "next/navigation";
 import AuthLayout from "../(auth)/Authlayout";
 import AppLayout from "../(main)/layout";
 import MainLayout from "@/components/layout/mainlayout";
+import { ToastContainer } from "react-toastify";
 
 export default function Wrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -21,6 +22,16 @@ export default function Wrapper({ children }: { children: React.ReactNode }) {
           <AppLayout>{children}</AppLayout>
         </MainLayout>
       )}
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="light"
+      />
     </>
   );
 }

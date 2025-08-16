@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "./globals.scss";
 import Wrapper from "./layout-wrapper/layout";
 import StoreProvider from "./StoreProvider";
+import "react-toastify/dist/ReactToastify.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -68,9 +69,7 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <StoreProvider>
-          <Wrapper>
-            {children}
-            </Wrapper>
+          <Wrapper>{children}</Wrapper>
         </StoreProvider>
       </body>
     </html>

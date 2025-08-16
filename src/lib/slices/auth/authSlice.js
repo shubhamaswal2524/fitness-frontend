@@ -1,7 +1,7 @@
 import { authApiSlice } from "./authApiSlice";
 import { setCookie, destroyCookie } from "nookies";
 
-const { createSlice } = require("@reduxjs/toolkit");
+import { createSlice } from "@reduxjs/toolkit";
 
 const authSlice = createSlice({
   name: "auth",
