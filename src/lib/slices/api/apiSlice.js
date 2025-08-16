@@ -2,7 +2,8 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: "http://localhost:8000/api/v1",
+  baseUrl: "http://3.6.92.173:5000/api/v1",
+  // baseUrl: "http://localhost:8000/api/v1",
 
   prepareHeaders: (headers, { getState, endpoint, body }) => {
     const UPLOAD_ENDPOINTS = ["update-profile"];

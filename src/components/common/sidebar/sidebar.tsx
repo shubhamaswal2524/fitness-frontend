@@ -31,12 +31,15 @@ const Sidebar = ({ show }: any) => {
     { href: "daily-diet", label: "Daily Diet" },
     { href: "notifications", label: "Notifications" },
   ];
+
+  console.log("pathname", pathname);
   return (
     <>
       <div className={`sidebar ${show ? "active" : ""}`}>
         <div className="logo">
-         <Link href="/">
-          <Image src={logo} alt="" /> </Link>
+          <Link href="/">
+            <Image src={logo} alt="" />{" "}
+          </Link>
         </div>
         <div className="sidebar_in">
           <ul>
@@ -45,7 +48,7 @@ const Sidebar = ({ show }: any) => {
                 <Link
                   href={`/${link.href}`}
                   className={`main_heading ${
-                    pathname === link.href ? "active" : ""
+                    pathname?.includes(link.href) ? "active" : ""
                   }`}
                   onClick={() => dispatch(setSidebarTabs(link?.href))}
                 >
