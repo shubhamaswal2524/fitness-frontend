@@ -14,7 +14,7 @@ const Price = () => {
               <DumbleIcon /> pricing plan
             </p>
             <h1 className="main_heading">
-              Three coaching tiers. One result: 
+              Three coaching tiers. One result:  
               <span>your best shape </span> ever
             </h1>
           </div>
