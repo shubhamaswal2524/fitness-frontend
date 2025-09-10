@@ -17,7 +17,7 @@
   }
 
   &::after {
-    content: "Priceing";
+    content: "Pricing";
     position: absolute;
     top: 10rem;
     z-index: -1;
@@ -87,7 +87,7 @@
 
       .price_card {
         &:not(:last-child) {
-          margin-right: 10rem;
+          margin-right: 2.5rem;
 
           @media (max-width:991px) {
             margin-right: 6rem;

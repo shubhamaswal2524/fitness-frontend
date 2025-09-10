@@ -14,19 +14,18 @@ const Price = () => {
               <DumbleIcon /> pricing plan
             </p>
             <h1 className="main_heading">
-              Transform Your Body with Our
-              <span>Dynamic Fitness</span> Classes
+              Three coaching tiers. One result: 
+              <span>your best shape </span> ever
             </h1>
           </div>
           <div className="card_box">
             <PriceCard className="active" />
-            <PriceCard />
       
           </div>
           <ul className="options">
-            <li><MiniCelenderIcon/>Get 30 day free trial</li>
+            <li><MiniCelenderIcon/>Prices inclusive of GST</li>
             <li><MiniDollerIcon/>No any hidden fees pay</li>
-            <li><TimeIcon/>You can cancel anytime</li>
+            <li><TimeIcon/>Terms & Conditions apply</li>
           </ul>
         </div>
       </Container>
