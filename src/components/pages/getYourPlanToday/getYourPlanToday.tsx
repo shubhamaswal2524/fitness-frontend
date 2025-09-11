@@ -8,6 +8,7 @@ import { useFormik } from "formik";
 import { useRouter } from "next/navigation";
 import { Col, Container, Row } from "react-bootstrap";
 import * as Yup from "yup";
+import { DumbleIcon } from "../../../../public/assets/icons";
 
 interface FormValues {
   name: string;
@@ -88,6 +89,15 @@ const GetYourPlanToday = () => {
     <div className="get_your_plan_today">
       <Container>
         <form onSubmit={formik.handleSubmit} className="get_your_plan_today_in">
+          <div className="head_price">
+            <p>
+                <DumbleIcon /> keep in touch
+              </p>
+              <h1 className="main_heading">
+                Get Your Plan 
+                <span>Today </span>
+              </h1>
+          </div>
           <Row>
             <Col lg={6}>
               <Input

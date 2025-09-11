@@ -7,14 +7,15 @@ import Hero from "./hero/hero";
 import Consultancy from "../consultancy/consultancy";
 import BlogList from "../blogList/blogList";
 import GetYourPlanToday from "../getYourPlanToday/getYourPlanToday";
+import FaqPage from "../faqPage/faqPage";
 const Homepage = () => {
   return (
     <div className="homepage_design">
       <Hero />
       <MarqueeBar />
       <BmiPage />
-      <Price/>
       <AboutPage/>
+      <Price/>
       <Videopage/>
       <Consultancy/>
       <BlogList/>

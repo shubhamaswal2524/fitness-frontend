@@ -24,8 +24,9 @@ const AboutPage = () => {
                 <span>Together</span></h2>
                 <p>My name is Arsh Sandhu. I am a certified strength coach, nutritionist, and personal trainer. Build for you the safest and most effective exercise and nutrition program possible, and make sure you have the absolute best experience every time we train together.</p>
                 <ul>
-                    <li><span>01</span>Fitness Trainner</li>
-                    <li><span>02</span>Body Building</li>
+                    <li><span>01</span>Fitness</li>
+                    <li><span>02</span>Intensive Care</li>
+                    <li><span>03</span>Diet Chart</li>
                 </ul>
                 <p>Gradually increasing the intensity, duration, or complexity of exercises ensures ongoing improvements in strength, endurance, and overall fitness.</p>
               <div className="action_box">

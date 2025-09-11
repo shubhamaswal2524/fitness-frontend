@@ -11,11 +11,11 @@ const Price = () => {
           <div className="head_price">
             <p>
               {" "}
-              <DumbleIcon /> pricing plan
+              <DumbleIcon /> Our Pricing
             </p>
             <h1 className="main_heading">
-              Three coaching tiers. One result:  
-              <span>your best shape </span> ever
+              Pick Your   
+              <span>Plan </span>
             </h1>
           </div>
           <div className="card_box">

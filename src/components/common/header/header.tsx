@@ -76,9 +76,12 @@ const Header = () => {
             <li>
               <Link href="/shred-x">Shred-x</Link>
             </li>
+            {/* <li>
+              <Link href="/faqs">FAQ's</Link>
+            </li> */}
           </ul>
           <div className="action">
-            <Button
+            {/* <Button
               onClick={() => router.push("/login")}
               // className="custom_link"
             >
@@ -90,7 +93,7 @@ const Header = () => {
             >
               <span>Sign Up</span>
               <UserIcon />
-            </Button>
+            </Button> */}
             <button onClick={() => setShow(true)} className="side_bar_toggle">
               <OpenSidebar />
             </button>

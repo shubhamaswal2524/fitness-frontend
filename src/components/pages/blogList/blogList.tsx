@@ -61,8 +61,8 @@ const BlogList = () => {
                   <Link href={"_blank"}><PlayIcon/>Watch More</Link>
                 </div>
                 <div className="bloger_name">
-                  <h3>jashanpreet singh</h3>
-                  <p>mohali</p>
+                  <h3>Arsh Sandhu Fitness</h3>
+                  <p>Mohali</p>
                 </div>
               </div>
               <div className="inner_content">
@@ -71,8 +71,8 @@ const BlogList = () => {
                   <Link href={"_blank"}><PlayIcon/>Watch More</Link>
                 </div>
                 <div className="bloger_name">
-                  <h3>jashanpreet singh</h3>
-                  <p>mohali</p>
+                  <h3>Arsh Sandhu Fitness</h3>
+                  <p>Mohali</p>
                 </div>
               </div>
               <div className="inner_content">
@@ -81,8 +81,8 @@ const BlogList = () => {
                   <Link href={"_blank"}><PlayIcon/>Watch More</Link>
                 </div>
                 <div className="bloger_name">
-                  <h3>jashanpreet singh</h3>
-                  <p>mohali</p>
+                   <h3>Arsh Sandhu Fitness</h3>
+                  <p>Mohali</p>
                 </div>
               </div>
               <div className="inner_content">
@@ -91,8 +91,8 @@ const BlogList = () => {
                   <Link href={"_blank"}><PlayIcon/>Watch More</Link>
                 </div>
                 <div className="bloger_name">
-                  <h3>jashanpreet singh</h3>
-                  <p>mohali</p>
+                  <h3>Arsh Sandhu Fitness</h3>
+                  <p>Mohali</p>
                 </div>
               </div>
             </Slider>
