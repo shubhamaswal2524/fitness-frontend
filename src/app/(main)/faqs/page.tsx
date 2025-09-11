@@ -1,3 +1,4 @@
+"use client";
 import FaqPage from "../../../components/pages/faqPage/faqPage";
 
 const page = () => {

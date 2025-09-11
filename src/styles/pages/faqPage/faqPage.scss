@@ -1,10 +1,15 @@
 @use "../../../../public/assets/_var.scss" as *;
 .faq_page {
-  padding: 3rem 0rem;
+  padding: 10rem 0rem 5rem;
   @media (max-width: 767px) {
     padding: 2rem 0rem;
   }
-  .faq_accordion {
+  .contact_us_in{
+    width: 100%;
+    text-align: left;
+  }
+  .faq_accordion.accordion {
+    width: 100%;
     .accordion-item {
       background: transparent;
       color: $white;
@@ -17,7 +22,7 @@
 
       .accordion-header {
         button {
-          background: $red;
+          background: rgba(255, 255, 255, 0.1);
           font-size: 2rem;
           font-weight: 500;
           line-height: 2.4rem;

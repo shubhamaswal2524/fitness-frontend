@@ -76,9 +76,9 @@ const Header = () => {
             <li>
               <Link href="/shred-x">Shred-x</Link>
             </li>
-            {/* <li>
+            <li>
               <Link href="/faqs">FAQ's</Link>
-            </li> */}
+            </li>
           </ul>
           <div className="action">
             {/* <Button
