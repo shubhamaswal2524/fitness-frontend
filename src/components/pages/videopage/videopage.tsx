@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Container } from "react-bootstrap";
 import YouTubeService from "@/services/youtube.service";
 import { VideoPrevIcon, VideoNextIcon } from "../../../../public/assets/icons";
@@ -14,7 +14,7 @@ interface VideoData {
 const mockVideos: VideoData[] = [
   {
     id: "1",
-    title: "Full Body Workout for Beginners",
+    title: "Fitness Journey",
     thumbnail: "https://img.youtube.com/vi/uMzbVw-xj1I/maxresdefault.jpg",
     videoId: "uMzbVw-xj1I",
     duration: "10:05",
@@ -29,22 +29,20 @@ const mockVideos: VideoData[] = [
 ];
 
 const Videopage = () => {
-  const [videos, setVideos] = useState<VideoData[]>(mockVideos);
+  const [videos] = useState<VideoData[]>(mockVideos);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
   const [error] = useState<string | null>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
-  const [iframeKey, setIframeKey] = useState(0);
+  const playerRef = useRef<HTMLIFrameElement>(null);
 
-  // On every page render, force the iframe to reload (autoplay)
-  useEffect(() => {
-    setIframeKey((prev) => prev + 1);
-  }, []);
-
-  // If you want autoplay on every navigation (next/prev), you could also add:
-  // useEffect(() => {
-  //   setIframeKey((prev) => prev + 1);
-  // }, [currentIndex]);
+  // Helper to build the YouTube embed URL with autoplay and other params
+  const getEmbedUrl = (videoId: string) => {
+    // 'mute=1' is required for autoplay to work on most browsers
+    // 'autoplay=1' will only work if the video is muted
+    // 'playsinline=1' is for iOS Safari to play inline
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&rel=0&playsinline=1`;
+  };
 
   const nextVideo = () => {
     setCurrentIndex((prev) => (prev + 1) % videos.length);
@@ -93,8 +91,9 @@ const Videopage = () => {
             <div className="main_video_player">
               <div className="video_wrapper">
                 <iframe
-                  key={iframeKey}
-                  src={`https://www.youtube.com/embed/${videos[currentIndex]?.videoId}?autoplay=1&rel=0`}
+                  ref={playerRef}
+                  key={videos[currentIndex]?.videoId}
+                  src={getEmbedUrl(videos[currentIndex]?.videoId)}
                   title={videos[currentIndex]?.title}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

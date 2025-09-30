@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Toast } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Input from "@/components/common/input/input";
@@ -11,6 +11,7 @@ import Link from "next/link";
 import { ArrowIcon } from "../../../../../public/assets/icons";
 import CommonCheckbox from "@/components/common/commonCheckbox/commonCheckbox";
 import { useRegisterMutation } from "@/lib/slices/auth/authApiSlice"; // No longer needed
+import { ToastSuccess } from "@/components/common/toast/toast";
 
 interface FormValues {
   firstName: string;
@@ -106,26 +107,40 @@ const Signup = () => {
           const message = `My name is ${firstName} ${lastName}, my email is ${email}, and my mobile number is ${phoneNumber}. I have selected the ${packageLabel} package. My height is ${values.height} and my weight is ${values.weight}. It is a pleasure joining you and I look forward to starting my fitness journey with your team.`;
           const encodedMessage = encodeURIComponent(message);
           const whatsappNumber = "9689400002";
-          const whatsappAppUrl = `whatsapp://send?phone=91${whatsappNumber}&text=${encodedMessage}`;
           const whatsappWebUrl = `https://wa.me/91${whatsappNumber}?text=${encodedMessage}`;
+          const whatsappAppUrl = `whatsapp://send?phone=91${whatsappNumber}&text=${encodedMessage}`;
 
-          // Delay 3 seconds, then open or redirect to WhatsApp
+          ToastSuccess(
+            "Registration successful, will redirect to connect with us on whatsapp"
+          );
+
+          // Detect if device is iOS
+          function isIOS() {
+            return (
+              /iPad|iPhone|iPod/.test(navigator?.userAgent) ||
+              (navigator?.userAgent?.includes("Macintosh") &&
+                "ontouchend" in document)
+            );
+          }
+
           setTimeout(() => {
-            // Try to open WhatsApp app
-            const win = window.open(whatsappAppUrl, "_blank");
-            // If app is not installed or cannot be opened, fallback to web after a short delay
-            setTimeout(() => {
-              if (win) {
-                win.location = whatsappWebUrl;
-              } else {
-                window.open(whatsappWebUrl, "_blank");
-              }
-            }, 1000);
+            if (isIOS()) {
+              // On iOS, always use the web URL, as whatsapp:// won't work from browser
+              window.open(whatsappWebUrl, "_blank");
+            } else {
+              // On Android/desktop, try to open the app, fallback to web
+              const win = window.open(whatsappAppUrl, "_blank");
+              setTimeout(() => {
+                // If the app did not open, fallback to web
+                if (!win || win.closed || typeof win.closed === "undefined") {
+                  window.open(whatsappWebUrl, "_blank");
+                }
+              }, 1000);
+            }
+            // Optionally reset the form
+            resetForm();
+            router.push("/");
           }, 3000);
-
-          // Optionally reset the form
-          resetForm();
-          router.push("/");
         }
 
         console.log("response", response);
