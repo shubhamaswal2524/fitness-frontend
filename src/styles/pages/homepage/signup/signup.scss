@@ -1,60 +1,95 @@
 @use "../../../../../public/assets/_var.scss" as *;
 
 .signup {
-    width: 100%;
+  width: 100%;
 
-    .main_heading {
-        margin-bottom: 4rem;
-    }
+  .main_heading {
+    margin-bottom: 4rem;
+  }
 
-    &_in {
-        height: calc(100vh - 6rem);
-        color: $white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
+  &_in {
+    height: calc(100vh - 6rem);
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
 
-        form {
-            .field_in {
-                &:not(:last-child) {
-                    margin-bottom: 1.5rem;
-                }
-
-            }
-
-            .custom_button {
-                width: 100%;
-            }
-
-            .login_para {
-                font-size: 1.5rem;
-                margin-top: .4rem;
-                line-height: 2rem;
-                font-weight: 400;
-                text-align: center;
-
-                span {
-                    color: $red;
-                }
-            }
+    form {
+      .field_in {
+        &:not(:last-child) {
+          margin-bottom: 1.5rem;
         }
-    }
+      }
 
-    .sign_in_check {
-        margin-bottom: 2rem;
-    }
+      .custom_button {
+        width: 100%;
+      }
 
-    .login_para {
+      .login_para {
         font-size: 1.5rem;
         margin-top: 0.4rem;
         line-height: 2rem;
         font-weight: 400;
         text-align: center;
 
-        a {
-            color: $red;
-            margin-left: 0.4rem;
+        span {
+          color: $red;
         }
+      }
     }
+  }
+
+  .sign_in_check {
+    margin-bottom: 2rem;
+  }
+
+  .login_para {
+    font-size: 1.5rem;
+    margin-top: 0.4rem;
+    line-height: 2rem;
+    font-weight: 400;
+    text-align: center;
+
+    a {
+      color: $red;
+      margin-left: 0.4rem;
+    }
+  }
+
+  .back_button_container {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 10;
+
+    .back_button {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: $white;
+      text-decoration: none;
+      font-size: 1.4rem;
+      font-weight: 500;
+      padding: 0.8rem 1.5rem;
+      border: 0.1rem solid $red;
+      border-radius: 1rem;
+      background: rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba($red, 0.2);
+        border-color: lighten($red, 10%);
+        color: $white;
+        text-decoration: none;
+      }
+
+      svg {
+        width: 1.6rem;
+        height: 1.6rem;
+        transform: rotate(180deg);
+      }
+    }
+  }
 }

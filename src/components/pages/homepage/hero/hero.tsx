@@ -7,10 +7,12 @@ import Image from "next/image";
 import { Col, Container, Row } from "react-bootstrap";
 import heroimg from "../../../../../public/assets/heroimg.png";
 import arrowimg from "../../../../../public/assets/Container.png";
+import { useRouter } from "next/navigation";
 
 // gsap.registerPlugin(SplitText);
 
 const Hero = () => {
+  const router = useRouter();
   // useEffect(() => {
   //   const split = new SplitText("#split_text", { type: "chars" });
   //   gsap.from(split.chars, {
@@ -32,14 +34,17 @@ const Hero = () => {
                   Your body can <span>stand almost</span> anything.
                 </h1>
                 <p>
-                  Push past your limits, stay committed, and watch as your
-                  body transforms into a powerhouse of strength and resilience.
+                  Push past your limits, stay committed, and watch as your body
+                  transforms into a powerhouse of strength and resilience.
                 </p>
                 <div className="count_box">
                   <h2>20+</h2>
                   <p>Years of Experience</p>
                 </div>
-                <CommonArrowButton className="border_arro_btn">
+                <CommonArrowButton
+                  className="border_arro_btn"
+                  onClick={() => router.push("/signup")}
+                >
                   Explore More
                 </CommonArrowButton>
               </div>
