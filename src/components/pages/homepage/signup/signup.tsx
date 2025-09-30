@@ -107,7 +107,8 @@ const Signup = () => {
           const message = `My name is ${firstName} ${lastName}, my email is ${email}, and my mobile number is ${phoneNumber}. I have selected the ${packageLabel} package. My height is ${values.height} and my weight is ${values.weight}. It is a pleasure joining you and I look forward to starting my fitness journey with your team.`;
           const encodedMessage = encodeURIComponent(message);
           const whatsappNumber = "9689400002";
-          const whatsappWebUrl = `https://wa.me/91${whatsappNumber}?text=${encodedMessage}`;
+          const whatsappiosUrl = `https://wa.me/91${whatsappNumber}?text=${encodedMessage}`;
+          const whatsappWebUrl = `https://web.whatsapp.com/send?phone=91${whatsappNumber}&text=${encodedMessage}`;
           const whatsappAppUrl = `whatsapp://send?phone=91${whatsappNumber}&text=${encodedMessage}`;
 
           ToastSuccess(
@@ -125,19 +126,21 @@ const Signup = () => {
 
           setTimeout(() => {
             if (isIOS()) {
-              // On iOS, always use the web URL, as whatsapp:// won't work from browser
-              window.open(whatsappWebUrl, "_blank");
+              try {
+                window.open(whatsappiosUrl, "_blank");
+              } catch (error) {
+                window.open(whatsappWebUrl, "_blank");
+              }
             } else {
-              // On Android/desktop, try to open the app, fallback to web
+              // Keep existing logic for other platforms
               const win = window.open(whatsappAppUrl, "_blank");
               setTimeout(() => {
-                // If the app did not open, fallback to web
                 if (!win || win.closed || typeof win.closed === "undefined") {
                   window.open(whatsappWebUrl, "_blank");
                 }
               }, 1000);
             }
-            // Optionally reset the form
+            // Reset form and redirect
             resetForm();
             router.push("/");
           }, 3000);
